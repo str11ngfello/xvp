@@ -1,0 +1,321 @@
+
+//Blinn Phong lighting model
+
+
+struct BPResults
+{
+	float3 v3Diffuse;
+	float3 v3Specular;
+	float diffTerm;
+	float specTerm;
+};
+
+
+BPResults calcBPDirectional(float3 v3Normal, 
+                            float3 v3ObjToEyeDir, 
+                            float3 v3NegLightDir,
+                            float4 v4DiffuseColor, 
+                            float4 v4SpecularColor, 
+                            float specularExp)
+{
+	float lightFactor;
+	BPResults output;
+		
+	//Calculate the diffuse term
+#ifdef HALF_DIFFUSE
+	output.diffTerm = pow(((dot(v3Normal,v3NegLightDir) * .5f) + .5f),2);
+#else
+	output.diffTerm = dot(v3Normal,v3NegLightDir);
+#endif
+
+	if (output.diffTerm > 0)
+	{		
+		//Calculate the specular term
+        output.specTerm = saturate(dot(v3Normal,normalize(v3NegLightDir + v3ObjToEyeDir)));
+        output.specTerm = pow(output.specTerm,specularExp);
+		
+		//Calculate self occlusion term
+		lightFactor = saturate(4 * output.diffTerm);
+				
+		//Calculate the diffuse contribution
+		output.v3Diffuse = v4DiffuseColor.rgb * output.diffTerm * lightFactor * v4DiffuseColor.a;
+		
+		//Calculate the specular contribution
+		output.v3Specular = v4SpecularColor.rgb * output.specTerm * lightFactor * v4SpecularColor.a;		
+	}
+	
+	return output;	
+}                    
+
+
+BPResults calcBPPoint( in float3 v3ObjNormal, 
+                       in float3 v3ObjToEyeDir, 
+                       in float3 v3Position,
+                       in float3 v3LightPosition,
+                                      in float	fInvLightCutoff,
+                                      in float	fHotSpotDist,
+                                      in float4 v4DiffuseColor, 
+                                      in float4 v4SpecularColor, 
+                                      in float  fSpecularExp )
+{
+	float3    v3Light      = (float3)0;
+	float     fLightLength = 0.0f;
+	float     fLightFactor = 0.0f;
+	BPResults output;
+	
+	// Calculate light vector
+	v3Light = v3LightPosition - v3Position;
+	fLightLength = length( v3Light );
+	v3Light /= fLightLength;
+
+	// Calculate diffuse term
+	output.diffTerm = dot( v3ObjNormal, v3Light );
+	
+	// Test if valid light source
+	if( output.diffTerm > 0 )
+	{		
+		// Calculate specular term
+        output.specTerm = saturate( dot( v3ObjNormal, normalize( v3Light + v3ObjToEyeDir ) ) );
+		output.specTerm = pow( output.specTerm, fSpecularExp );
+		
+		// Calculate linear falloff attenuation
+		fLightFactor = max( fLightLength - fHotSpotDist, 0 ) * fInvLightCutoff;
+		fLightFactor = 1.0 - fLightFactor;
+		fLightFactor = max( fLightFactor, 0 );
+        
+        // Attenutate by self occlusion
+		fLightFactor *= saturate( 4 * output.diffTerm );
+				
+		// Calculate diffuse contribution
+		output.v3Diffuse = v4DiffuseColor.rgb * output.diffTerm * fLightFactor * v4DiffuseColor.a;
+		
+		// Calculate specular contribution
+		output.v3Specular = v4SpecularColor.rgb * output.specTerm * fLightFactor * v4SpecularColor.a;		
+	}
+	
+	return( output );	
+}                                    
+
+BPResults calcBPSpot( in float3 v3Normal, 
+                      in float3 v3ObjToEyeDir, 
+                      in float3 v3Position,
+                      in float3 v3LightPosition,
+                      in float3 v3NegLightDirection,
+                      in float  fInvLightCutoff,
+                      in float  fHotSpotDist,
+                      in float  fCosHalfAngleCutoff,
+                      in float  fCosHalfAngleDropoff,
+                      in float4 v4DiffuseColor, 
+                      in float4 v4SpecularColor, 
+                      in float  fSpecularExp )
+{
+	float3    v3ObjToLightDir	= (float3)0;
+	float     fLightLength 		= 0.0f;
+	float     fCosAngle    		= 0.0f;
+	float     fLightFactor 		= 0.0f;
+	BPResults output;
+
+	output.v3Diffuse = float3(0,0,0);
+	output.v3Specular = float3(0,0,0);
+
+
+
+	// Calculate light vector
+	v3ObjToLightDir = v3LightPosition - v3Position;
+	fLightLength = length( v3ObjToLightDir );
+	v3ObjToLightDir /= fLightLength;
+	
+	// Calculate diffuse term
+	output.diffTerm = dot( v3Normal, v3ObjToLightDir );
+	
+	// Test if valid light source
+	if( output.diffTerm > 0 )
+	{		
+		// Calculate specular term
+		output.specTerm = saturate( dot( v3Normal, normalize( v3ObjToLightDir + v3ObjToEyeDir ) ) );
+		output.specTerm = pow( output.specTerm, fSpecularExp );
+		
+		// Calculate linear falloff attenuation
+		fLightFactor = max( fLightLength - fHotSpotDist, 0 ) * fInvLightCutoff;
+		fLightFactor = 1.0 - fLightFactor;
+		fLightFactor = max( fLightFactor, 0 );
+		
+		// Attenuate by spot factor
+		fCosAngle    = dot( v3NegLightDirection, v3ObjToLightDir );
+		fLightFactor *= smoothstep( fCosHalfAngleCutoff, fCosHalfAngleDropoff, fCosAngle );
+				
+		// Calculate diffuse contribution
+		output.v3Diffuse = v4DiffuseColor.rgb * output.diffTerm * fLightFactor * v4DiffuseColor.a;
+		
+		// Calculate specular contribution
+		output.v3Specular = v4SpecularColor.rgb * output.specTerm * fLightFactor * v4SpecularColor.a;		
+	}
+	
+	return( output );	
+}                           
+
+
+BPResults calcBPLighting(float3 v3VertPos,
+						 float3 v3Normal,
+						 float3 v3ObjToEyeDir,
+						 int4 lightEnabled,
+						 int4 lightTypes,	
+						 float4 v4LightDir[MAX_NUM_LIGHTS],	
+						 float4 v4LightPos[MAX_NUM_LIGHTS],	
+						 float4 v4LightDiffuse[MAX_NUM_LIGHTS],
+						 float4 v4LightSpecular[MAX_NUM_LIGHTS],		
+						 float4 v4LightParams[MAX_NUM_LIGHTS],
+						 float specPower)
+{
+	BPResults bpResults = (BPResults)0;
+	BPResults tempBPResults = (BPResults)0;
+	
+	//Look for up to 4 enabled lights.  Early out ASAP...
+	if (lightEnabled.x)
+	{
+		if (lightTypes.x == 0)
+			bpResults = calcBPDirectional(v3Normal,
+										  v3ObjToEyeDir,
+										  -v4LightDir[0].xyz,
+										  v4LightDiffuse[0],
+										  v4LightSpecular[0],
+										  specPower);
+		else if (lightTypes.x == 1)
+			bpResults = calcBPPoint(v3Normal,
+									v3ObjToEyeDir,
+									v3VertPos,
+									v4LightPos[0].xyz,
+									v4LightParams[0].x,
+									v4LightParams[0].y,
+									v4LightDiffuse[0],
+								    v4LightSpecular[0],
+								    specPower);
+		else if (lightTypes.x == 2)
+			bpResults = calcBPSpot(v3Normal,
+								   v3ObjToEyeDir,
+								   v3VertPos,
+								   v4LightPos[0].xyz,
+								   -v4LightDir[0].xyz,
+								   v4LightParams[0].x,
+								   v4LightParams[0].y,
+								   v4LightParams[0].z,
+								   v4LightParams[0].w,
+								   v4LightDiffuse[0],
+								   v4LightSpecular[0],
+								   specPower);
+
+		if (lightEnabled.y)
+		{
+			if (lightTypes.y == 0)
+				tempBPResults = calcBPDirectional(v3Normal,
+											  v3ObjToEyeDir,
+											  -v4LightDir[1].xyz,
+											  v4LightDiffuse[1],
+											  v4LightSpecular[1],
+											  specPower);
+			else if (lightTypes.y == 1)
+				tempBPResults = calcBPPoint(v3Normal,
+										v3ObjToEyeDir,
+										v3VertPos,
+										v4LightPos[1].xyz,
+										v4LightParams[1].x,
+										v4LightParams[1].y,
+										v4LightDiffuse[1],
+										v4LightSpecular[1],
+										specPower);
+			else if (lightTypes.y == 2)
+				tempBPResults = calcBPSpot(v3Normal,
+									   v3ObjToEyeDir,
+									   v3VertPos,
+									   v4LightPos[1].xyz,
+									   -v4LightDir[1].xyz,
+									   v4LightParams[1].x,
+									   v4LightParams[1].y,
+									   v4LightParams[1].z,
+									   v4LightParams[1].w,
+									   v4LightDiffuse[1],
+									   v4LightSpecular[1],
+									   specPower);
+
+			bpResults.v3Diffuse += tempBPResults.v3Diffuse;
+			bpResults.v3Specular += tempBPResults.v3Specular;
+
+			if (lightEnabled.z)
+			{
+				if (lightTypes.z == 0)
+					tempBPResults = calcBPDirectional(v3Normal,
+												  v3ObjToEyeDir,
+												  -v4LightDir[2].xyz,
+												  v4LightDiffuse[2],
+												  v4LightSpecular[2],
+												  specPower);
+				else if (lightTypes.z == 1)
+					tempBPResults = calcBPPoint(v3Normal,
+											v3ObjToEyeDir,
+											v3VertPos,
+											v4LightPos[2].xyz,
+											v4LightParams[2].x,
+											v4LightParams[2].y,
+											v4LightDiffuse[2],
+											v4LightSpecular[2],
+											specPower);
+				else if (lightTypes.z == 2)
+					tempBPResults = calcBPSpot(v3Normal,
+										   v3ObjToEyeDir,
+										   v3VertPos,
+										   v4LightPos[2].xyz,
+										   -v4LightDir[2].xyz,
+										   v4LightParams[2].x,
+										   v4LightParams[2].y,
+										   v4LightParams[2].z,
+										   v4LightParams[2].w,
+										   v4LightDiffuse[2],
+										   v4LightSpecular[2],
+										   specPower);
+
+				bpResults.v3Diffuse += tempBPResults.v3Diffuse;
+				bpResults.v3Specular += tempBPResults.v3Specular;
+
+				if (lightEnabled.w)
+				{
+					if (lightTypes.w == 0)
+						tempBPResults = calcBPDirectional(v3Normal,
+													  v3ObjToEyeDir,
+													  -v4LightDir[3].xyz,
+													  v4LightDiffuse[3],
+													  v4LightSpecular[3],
+													  specPower);
+					else if (lightTypes.w == 1)
+						tempBPResults = calcBPPoint(v3Normal,
+												v3ObjToEyeDir,
+												v3VertPos,
+												v4LightPos[3].xyz,
+												v4LightParams[3].x,
+												v4LightParams[3].y,
+												v4LightDiffuse[3],
+												v4LightSpecular[3],
+												specPower);
+					else if (lightTypes.w == 2)
+						tempBPResults = calcBPSpot(v3Normal,
+											   v3ObjToEyeDir,
+											   v3VertPos,
+											   v4LightPos[3].xyz,
+											   -v4LightDir[3].xyz,
+											   v4LightParams[3].x,
+											   v4LightParams[3].y,
+											   v4LightParams[3].z,
+											   v4LightParams[3].w,
+											   v4LightDiffuse[3],
+											   v4LightSpecular[3],
+											   specPower);
+
+					bpResults.v3Diffuse += tempBPResults.v3Diffuse;
+					bpResults.v3Specular += tempBPResults.v3Specular;
+				}
+			}
+		}
+	}
+
+	
+	return bpResults;
+}

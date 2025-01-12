@@ -1,0 +1,72 @@
+#include "XVPShader.hfx"
+
+
+//*****************************************************************************
+//*****************************************************************************
+struct PS_INPUT
+{
+    float4 position         : SV_Position;
+    float2 texCoord0	    : TEXCOORD0;
+    float2 texCoord1	    : TEXCOORD1;
+    float2 texCoord2	    : TEXCOORD2;
+};
+
+
+struct PS_OUTPUT
+{
+    float4 v4Color : SV_TARGET;  // Pixel color
+};
+
+
+Texture2D fullScene : register(t0);
+SamplerState fullSceneSampler : register(s0);
+Texture2D downSampledScene : register(t1);
+SamplerState downSampledSceneSampler : register(s1);
+Texture2D depthBuffer : register(t2);
+SamplerState depthBufferSampler : register(s2);
+
+
+cbuffer NodeConstants : register(USER_SLOT0)
+{
+	float4 g_v4DOFParams : packoffset(c0);
+	float4 g_v4NearFarRatio : packoffset(c1);
+};
+
+
+float ComputeDepthBlur( in float fDepth )
+{
+    float fDepthBlur = g_v4DOFParams.x - fDepth;
+        
+    if( fDepth < g_v4DOFParams.x )
+    {
+        // Scale depth value between near blur distance and focal distance to [-1,0] range
+        fDepthBlur *= g_v4NearFarRatio.x;                
+    }
+	else
+    {
+        // Scale depth value between focal distance and far blur distance to [0,1] range
+        fDepthBlur *= g_v4NearFarRatio.y;
+    }    
+    	
+	return( fDepthBlur );
+}
+
+
+PS_OUTPUT mainPS( PS_INPUT input )
+{
+    PS_OUTPUT output       = (PS_OUTPUT)0;    
+    float     fCenterDepth = depthBuffer.Sample(depthBufferSampler,input.texCoord2).r;
+ 
+	// Compute depth blur
+    fCenterDepth = ComputeDepthBlur( fCenterDepth );    
+	
+	// Sample maps			
+	float4 v4ScaleColor = downSampledScene.Sample(downSampledSceneSampler,input.texCoord1);
+	float4 v4SceneColor = fullScene.Sample(fullSceneSampler,input.texCoord0);	
+		
+	// Lerp blur and scene		
+	output.v4Color   = lerp( v4SceneColor, v4ScaleColor, clamp( abs( fCenterDepth ), 0.0f, g_v4DOFParams.w ) );
+    output.v4Color.a =  1;
+        
+    return( output );
+}

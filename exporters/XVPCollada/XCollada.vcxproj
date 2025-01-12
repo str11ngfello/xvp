@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>XVPCollada</ProjectName>
+    <ProjectGuid>{22D71C5B-E7CD-44B0-B221-EBAF900DCD95}</ProjectGuid>
+    <RootNamespace>Collada</RootNamespace>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.21006.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <EmbedManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EmbedManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\include;..\..\inc\xsp\pc\audio;..\..\inc\xsp\pc\graphics;..\..\inc\xsp\pc\input;..\..\inc\xsp\pc\network;..\..\inc\xsp\pc\os;..\..\inc\core;..\..\inc\;..\..\..\libs\OpenAL-1.1\include;..\..\..\libs\freealut-1.1.0-bin\include;..\..\..\libs\tinyxml-2.4.3;..\..\..\libs\libogg-1.1.3\include;..\..\..\libs\lua-5.0.2\include;..\..\..\libs\libvorbis-1.1.2\include;..\..\..\libs\zlib-1.2.3;..\..\inc;..\..\..\libs\COLLADA-1.4.1\COLLADA_DOM\include\1.4;..\..\..\libs\COLLADA-1.4.1\COLLADA_DOM\include;..\..\..\libs\NVMeshMender;..\..\..\libs\NVTriStrip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;COLLADA1_4;XSP_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>..\..\..\libs\COLLADA-1.4.1\COLLADA_DOM\lib-dbg\vc8\1.4\libcollada_dae_d.lib;..\..\..\libs\COLLADA-1.4.1\COLLADA_DOM\lib-dbg\vc8\1.4\libcollada_dom_d.lib;..\..\..\libs\COLLADA-1.4.1\COLLADA_DOM\lib-dbg\vc8\1.4\libcollada_STLDatabase_d.lib;..\..\..\libs\COLLADA-1.4.1\COLLADA_DOM\lib-dbg\vc8\1.4\libcollada_LIBXMLPlugin_d.lib;..\..\..\libs\COLLADA-1.4.1\COLLADA_DOM\lib-dbg\vc8\1.4\libcollada_stdErrPlugin_d.lib;..\..\..\libs\NVMeshMender\Debug\NVMeshMender.lib;..\..\..\libs\COLLADA-1.4.1\libxml2-2.6.30.win32\lib\libxml2_a.lib;..\..\..\libs\COLLADA-1.4.1\iconv-1.9.1.win32\lib\iconv_a.lib;..\..\..\libs\NVTriStrip\Debug\NvTriStripd.lib;..\..\..\libs\zlib-1.2.3\projects\visualc6\Win32_LIB_Debug\zlibd.lib;wsock32.lib;winmm.lib;xvp-win32-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)XVPCollada.exe</OutputFile>
+      <AdditionalLibraryDirectories>../../../COLLADA/COLLADA_1.4_DOM/external-libs/libxml2/win32/lib;../../../COLLADA/COLLADA_1.4_DOM/lib-dbg/1.4;..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>libcd.lib; libcmt.lib; libcmtd.lib;msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)optimizer.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>.\include;..\..\inc\xsp\pc\audio;..\..\inc\xsp\pc\graphics;..\..\inc\xsp\pc\input;..\..\inc\xsp\pc\network;..\..\inc\xsp\pc\os;..\..\inc\core;..\..\inc\;..\..\..\libs\OpenAL-1.1\include;..\..\..\libs\freealut-1.1.0-bin\include;..\..\..\libs\tinyxml-2.4.3;..\..\..\libs\libogg-1.1.3\include;..\..\..\libs\lua-5.0.2\include;..\..\..\libs\libvorbis-1.1.2\include;..\..\..\libs\zlib-1.2.3;..\..\inc;..\..\..\libs\COLLADA-1.4.1\COLLADA_DOM\include\1.4;..\..\..\libs\COLLADA-1.4.1\COLLADA_DOM\include;..\..\..\libs\NVMeshMender;..\..\..\libs\NVTriStrip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;COLLADA1_4;XSP_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>..\..\..\libs\COLLADA-1.4.1\COLLADA_DOM\lib\vc8\1.4\libcollada_dae.lib;..\..\..\libs\COLLADA-1.4.1\COLLADA_DOM\lib\vc8\1.4\libcollada_dom.lib;..\..\..\libs\COLLADA-1.4.1\COLLADA_DOM\lib\vc8\1.4\libcollada_STLDatabase.lib;..\..\..\libs\COLLADA-1.4.1\COLLADA_DOM\lib\vc8\1.4\libcollada_LIBXMLPlugin.lib;..\..\..\libs\COLLADA-1.4.1\COLLADA_DOM\lib\vc8\1.4\libcollada_stdErrPlugin.lib;..\..\..\libs\COLLADA-1.4.1\libxml2-2.6.30.win32\lib\libxml2_a.lib;..\..\..\libs\NVMeshMender\Release\NVMeshMender.lib;..\..\..\libs\zlib-1.2.3\projects\visualc6\Win32_LIB_Release\zlib.lib;..\..\..\libs\COLLADA-1.4.1\iconv-1.9.1.win32\lib\iconv.lib;..\..\..\libs\NVTriStrip\Release\NvTriStrip.lib;wsock32.lib;winmm.lib;xvp-win32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)XVPCollada.exe</OutputFile>
+      <AdditionalLibraryDirectories>../../../COLLADA/COLLADA_1.4_DOM/external-libs/libxml2/win32/lib;../../../COLLADA/COLLADA_1.4_DOM/lib/1.4;..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CommandLineOptions.cpp" />
+    <ClCompile Include="src\packedVertexIndex.cpp" />
+    <ClCompile Include="src\XVPCollada.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\CommandLineOptions.h" />
+    <ClInclude Include="include\packedVertexIndex.h" />
+    <ClInclude Include="include\structs.h" />
+    <ClInclude Include="include\XVertexFormats.h" />
+    <ClInclude Include="include\XVPCollada.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\XVP.vcxproj">
+      <Project>{fface166-e600-452c-be53-680d2c62c0c3}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

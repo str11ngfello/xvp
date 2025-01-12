@@ -1,0 +1,108 @@
+
+#include "XVPShader.hfx"
+
+float3 BLUE_SHIFT_VECTOR = float3( 1.05f, 0.97f, 1.27f ); 
+
+//*****************************************************************************
+//*****************************************************************************
+struct PS_INPUT
+{
+    float4 position         : SV_Position;
+    float2 vpTexCoords	    : TEXCOORD0;
+    float2 normTexCoords	    : TEXCOORD1;
+};
+
+struct PS_OUTPUT
+{
+    float4 v4Color : SV_TARGET;  // Pixel color
+};
+
+Texture2D color : register(t0);
+SamplerState colorSampler : register(s0);
+Texture2D bloom : register(t1);
+SamplerState bloomSampler : register(s1);
+Texture2D star : register(t2);
+SamplerState starSampler : register(s2);
+Texture2D adaptedLum : register(t3);
+SamplerState adaptedLumSampler : register(s3);
+
+
+cbuffer NodeConstants : register(USER_SLOT0)
+{
+	float4 g_v4BrightPassParams : packoffset(c0); //x = middle gray,y = threshold,z = offset,w = luminance white
+	float4 g_v4HDRParams : packoffset(c1); //x = bloom scale,y = star scale
+	float4 g_v4HDRParams2 : packoffset(c2); //x = adaptation percent, y = brightness, z = contrast, w = desaturate
+	float4 g_v4ColorBalance : packoffset(c3); //r,g,b,a = color offset
+
+};
+//float4 g_v4HDRParams        : register( PS_HDR_PARAMS );             ///> x = middle gray, y = bloom scale, z = star scale, w = adaptation percent
+//float4 g_v4BrightPassParams : register( PS_HDR_BRIGHT_PASS_PARAMS ); ///> x = threshold, y = offset, z = luminance white
+
+//bool g_bEnableBlueShift : register( PS_HDR_BLUE_SHIFT_ENABLE ); ///> Flag stating blue shift is enabled
+
+///
+/// Summary: HDR final pass composite
+///
+/// Details: Perform blue shift, tone map the scene, and add post-processed light effects
+///
+/// Params: SCREENQUAD_VS_OUTPUT input
+///
+/// Output: PS_OUTPUT
+///
+/// Notes:
+///    - 3/22/2006  - [Shawn Halwes]: Initial revision
+///
+PS_OUTPUT mainPS( PS_INPUT input )
+{
+    PS_OUTPUT output   = (PS_OUTPUT)0;
+    
+    float4 v4Color     = color.Sample(colorSampler,input.vpTexCoords );    
+    float4 v4Bloom     = bloom.Sample(bloomSampler,input.normTexCoords ); 
+    float4 v4Star      = star.Sample(starSampler,input.normTexCoords ); 
+    float  fAdaptedLum = adaptedLum.Sample(adaptedLumSampler,float2( 0.5f, 0.5f ) ).r;
+
+    // For very low light conditions, the rods will dominate the perception of
+    // light, and therefore color will be desaturated and shifted towards blue.
+    //if( g_bEnableBlueShift )
+    //{
+        // Define a linear blending from -1.5 to 2.6 (log scale) which
+        // determines the lerp amount for blue shift
+        //float fBlueShiftCoefficient = 1.0f - ( fAdaptedLum + 1.5 ) / 4.1;
+        //fBlueShiftCoefficient       = saturate( fBlueShiftCoefficient );
+
+        // Lerp between current color and blue, desaturated copy
+        //float3 vRodColor = dot( v4Color.rgb, LUMINANCE_VECTOR ) * BLUE_SHIFT_VECTOR;
+        //v4Color.rgb      = lerp( v4Color.rgb, vRodColor, fBlueShiftCoefficient );
+    //}
+    
+    // Map the high range of color values into a range appropriate for
+    // display, taking into account the user's adaptation level, and selected
+    // values for middle gray and white cutoff.
+    v4Color.rgb        *= g_v4BrightPassParams.x / ( fAdaptedLum + 0.001f );
+	output.v4Color.rgb =  (v4Color.rgb) * ( 1.0f + ( v4Color.rgb / ( g_v4BrightPassParams.w * g_v4BrightPassParams.w) ) );
+	output.v4Color.rgb /= ( 1.0f + v4Color.rgb );        
+    
+    // Add the star and bloom post processing effects
+    //output.v4Color.rgb += ( v4Star.rgb * g_v4HDRParams.y );
+    output.v4Color.rgb += ( v4Bloom.rgb * g_v4HDRParams.x );    
+
+	output.v4Color.a = 1;
+
+
+	//Desaturation
+	float3 gray = dot(float3(0.3,0.59,0.11),output.v4Color.rgb);
+	output.v4Color.rgb = lerp(output.v4Color.rgb,gray,g_v4HDRParams2.w);
+
+	//Color Balance
+	output.v4Color += g_v4ColorBalance;
+
+	//Contrast
+	output.v4Color.rgb -= .5f;
+	output.v4Color.rgb *= g_v4HDRParams2.z;
+	output.v4Color.rgb += .5f;
+	
+	//Brightness
+	output.v4Color.rgb += g_v4HDRParams2.y;
+    
+    return( output );
+}

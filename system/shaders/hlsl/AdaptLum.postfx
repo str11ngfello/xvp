@@ -1,0 +1,61 @@
+#include "XVPShader.hfx"
+
+//*****************************************************************************
+//*****************************************************************************
+struct PS_INPUT
+{
+    float4 position         : SV_Position;
+    float2 texCoord0	    : TEXCOORD0;
+};
+
+struct PS_OUTPUT
+{
+    float4 v4Color : SV_TARGET;  // Pixel color
+};
+
+Texture2D AdaptedLum : register(t0);
+SamplerState AdaptedLumTextureSampler : register(s0);
+Texture2D CurrentLum : register(t1);
+SamplerState CurrentLumTextureSampler : register(s1);
+
+
+// Globals
+cbuffer NodeConstants : register(USER_SLOT0)
+{
+	float4 g_v4BrightPassParams : packoffset(c0); //x = middle gray,y = threshold,z = offset,w = luminance white
+	float4 g_v4HDRParams : packoffset(c1); //x = bloom scale,y = star scale
+	float4 g_v4AdaptPercent : packoffset(c2); //x = adaptation percent
+};
+
+// Globals
+//float4 g_v4HDRParams   : register( PS_HDR_PARAMS );       ///> x = middle gray, y = bloom scale, z = star scale, w = adaptation percent
+//float4 g_v4ElapsedTime : register( PS_HDR_ELAPSED_TIME ); ///> x = time in seconds since the last calculation, y = exposure clamp
+
+///
+/// Summary: Calculate adapated luminance
+///
+/// Details: Calculate the luminance that the camera is current adapted to, using the most recent 
+///          adaptation level, the current scene luminance, and the time elapsed since last calculated
+///
+/// Params: SCREENQUAD_VS_OUTPUT input
+///
+/// Output: PS_OUTPUT
+///
+/// Notes:
+///    - 3/22/2006  - [Shawn Halwes]: Initial revision
+///
+PS_OUTPUT mainPS( PS_INPUT input )
+{
+    PS_OUTPUT output      = (PS_OUTPUT)0;
+    float     fAdaptedLum = AdaptedLum.Sample(AdaptedLumTextureSampler,float2( 0.5f, 0.5f )).r;
+    float     fCurrentLum = CurrentLum.Sample(CurrentLumTextureSampler,float2( 0.5f, 0.5f )).r;
+  
+    float fNewAdaptation = fAdaptedLum + ( fCurrentLum - fAdaptedLum ) * ( 1 - pow( g_v4AdaptPercent.x, 30 * g_v4HDRParams.w ) );
+ 
+    if (abs(fCurrentLum - fAdaptedLum) < g_v4HDRParams.z)
+		output.v4Color = float4( fAdaptedLum, fAdaptedLum, fAdaptedLum, 1.0f );    
+	else
+		output.v4Color = float4( fNewAdaptation, fNewAdaptation, fNewAdaptation, 1.0f );    
+
+    return( output );
+}

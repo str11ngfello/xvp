@@ -1,0 +1,113 @@
+
+float3 transformVecFromTangentSpace(in float3 v3Vector, 
+									in float3 v3Normal, 
+									in float3 v3Tangent, 
+									in float3 v3Binormal)
+{
+    float3 v3Output;
+	float3x3 tangentFrame = float3x3(v3Tangent,v3Binormal,v3Normal);	
+	v3Output = mul(v3Vector,tangentFrame);
+
+    return v3Output;
+}
+
+float3 transformVecToTangentSpace(in float3 v3Vector,
+								  in float3 v3Normal,
+								  in float3 v3Tangent,
+								  in float3 v3Binormal )
+{
+    float3 v3Output;
+    v3Output.x = dot(v3Vector,normalize(v3Tangent));
+    v3Output.y = dot(v3Vector,normalize(v3Binormal));
+    v3Output.z = dot(v3Vector,normalize(v3Normal));    
+
+    return v3Output;
+}
+
+float2 computeVelocities(in float4 v4CurPos,in float4 v4LastPos)
+{
+	float2 v2Output;
+		
+    v4CurPos.xy /= v4CurPos.w;
+    v4LastPos.xy /= v4LastPos.w;
+        
+    v2Output = v4CurPos.xy - v4LastPos.xy;    
+    
+    //The velocity range is [-2,2] so divide by 2 to get it to the range [-1,1]
+    v2Output *= 0.5f;
+		
+	return v2Output;
+}
+
+float3 peExtractCompressedNormal( in float4 v4CompressedNormal )
+{
+	float3 v3Output = (float3)0;
+	
+	v3Output.xy = ( 2 * v4CompressedNormal.ag ) - 1;
+	v3Output.z  = sqrt( 1 - ( v3Output.x * v3Output.x ) - ( v3Output.y * v3Output.y ) );	
+	                        	                  
+	return( v3Output );	                        
+}
+
+float peFresnel( in float3 v3Normal, in float3 v3View, in float fR0 )
+{
+	//Schlick approximation 
+	float fFresnel = pow( 1 - abs( dot( v3Normal, v3View ) ), 5 );
+	fFresnel       = lerp( fR0, 1.0f, fFresnel );
+	
+	return( fFresnel );
+}
+
+
+float peScreenToViewDepth( float screenDepth, float4 v4CamNearFar )
+{
+		float viewDepth;
+	float camNear;
+	float camFar;
+	float camNearMinusCamFar;
+	float camNearTimesCamFar;
+	
+	camNear = v4CamNearFar.x;
+	camFar = v4CamNearFar.y;
+	camNearMinusCamFar = v4CamNearFar.z;
+	camNearTimesCamFar = v4CamNearFar.w;
+	
+	// Xform from screen to clip space
+	screenDepth = 1.0f - screenDepth;
+	
+	// Xform from clip to view space (reverse w divide and proj mat)
+	viewDepth = -(camNearTimesCamFar);
+	viewDepth /= (screenDepth * (camNearMinusCamFar)) + camFar;
+	
+	return viewDepth;
+}
+
+float2 peClipToTexCoords( float2 clipCoords, float4 v4XformClipToTex )
+{
+	float2 xformScale;
+	float2 xformOffset;
+	float2 texCoords;
+
+	xformScale.x = v4XformClipToTex.x;
+	xformOffset.x = v4XformClipToTex.y;
+	xformScale.y = v4XformClipToTex.z;
+	xformOffset.y = v4XformClipToTex.w;
+	
+	texCoords.x = clipCoords.x * xformScale.x + xformOffset.x;
+	texCoords.y = clipCoords.y * xformScale.y + xformOffset.y;
+	
+	return texCoords;
+}
+
+float2 rotateUVs(float2 v2UV,float2 v2Center,float angle) 
+{ 
+	float2 sc; 
+	float2 rotated; 
+	sincos(angle,sc.x,sc.y); 
+	float2 uv = v2UV - v2Center; 
+	rotated.x = dot(uv,float2(sc.y,-sc.x)); 
+	rotated.y = dot(uv,sc.xy); 
+	rotated += v2Center; 
+
+	return rotated; 
+} 

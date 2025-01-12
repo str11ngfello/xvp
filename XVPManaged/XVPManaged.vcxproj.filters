@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ProxyObjects">
+      <UniqueIdentifier>{65dedbf1-e57b-48fe-b7f1-255953f5001c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProxyObjects\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ActorContainer.cpp">
+      <Filter>ProxyObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimController.cpp">
+      <Filter>ProxyObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="Camera.cpp">
+      <Filter>ProxyObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>ProxyObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialNP.cpp">
+      <Filter>ProxyObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>ProxyObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystem.cpp">
+      <Filter>ProxyObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysXController.cpp">
+      <Filter>ProxyObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="ProxyObject.cpp">
+      <Filter>ProxyObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Stdafx.cpp" />
+    <ClCompile Include="XVPManaged.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ActorContainer.h">
+      <Filter>ProxyObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimController.h">
+      <Filter>ProxyObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>ProxyObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>ProxyObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialNP.h">
+      <Filter>ProxyObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>ProxyObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem.h">
+      <Filter>ProxyObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysXController.h">
+      <Filter>ProxyObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="ProxyObject.h">
+      <Filter>ProxyObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="XVPManaged.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.ico">
+      <Filter>ProxyObjects\Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc">
+      <Filter>ProxyObjects\Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

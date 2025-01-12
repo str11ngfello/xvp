@@ -1,0 +1,1314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Actor">
+      <UniqueIdentifier>{fdfdad1f-18fc-4ed5-aa45-8f5f13869c17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animation">
+      <UniqueIdentifier>{ce959aff-c000-4981-bc96-5bc6fbafed89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{08357be4-f790-4420-b203-fcbc68b076f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controller">
+      <UniqueIdentifier>{04d7f3bf-9ce9-480e-a56d-b816b2bbe4fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{7efb9351-c9ff-405b-a5e7-c124513cf3f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Environment">
+      <UniqueIdentifier>{89f92ce4-301b-4788-a77e-103fe76dce05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gizmo">
+      <UniqueIdentifier>{f0ed9ac6-39f9-445b-bd2a-a283d63afdf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Intersection">
+      <UniqueIdentifier>{41262a38-9903-4580-ab28-b4980247cabf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JobQueue">
+      <UniqueIdentifier>{97b39b88-d2f6-45a2-a7f0-5352e0152cee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Light">
+      <UniqueIdentifier>{5f0177cd-bb12-4731-9cd2-5935bff36afc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lua">
+      <UniqueIdentifier>{52810b19-c27b-461d-b2a2-6c684b8c3afe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Material">
+      <UniqueIdentifier>{024aaa02-da3e-48e7-afdf-afd60e515fed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{2a16784b-8e1a-4d2f-86b8-0e46ecdca356}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{38d2f4e4-be86-4c7e-83cb-3ceb94967975}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Movie">
+      <UniqueIdentifier>{f5bbe367-d3f2-4a57-a305-1f502eb58c15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ParticleSystem">
+      <UniqueIdentifier>{f8c41766-c8d8-4bbb-8eff-4c6b9bca560d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PostEffect">
+      <UniqueIdentifier>{f40d5203-4ee3-4b2f-b7df-8cd0c1578094}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{519e07bf-cd13-4a17-b169-4ae6cc69a5dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripting">
+      <UniqueIdentifier>{15cf97b3-3a19-42fa-bd66-7ac9d9a30b7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShaderController">
+      <UniqueIdentifier>{9d726737-7cf0-42fb-9be5-b34944aa6aff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SkinMesh">
+      <UniqueIdentifier>{39b1426a-8530-4a21-97d6-4487b7277582}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sprite">
+      <UniqueIdentifier>{2a5ee1f4-c5f5-4fd2-910a-0d209254768e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stage">
+      <UniqueIdentifier>{2aa9269a-9641-419a-a5f1-bea144480262}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{10c6b030-b799-46da-afca-e6ee2898585e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{17d8eb18-af8c-479c-8dfa-067177ef34e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XSP">
+      <UniqueIdentifier>{c55b9a0e-c0c3-4d02-8738-d84c27659882}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XSP\audio">
+      <UniqueIdentifier>{d0d339cb-65ca-4a63-952a-1c9481d26781}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XSP\graphics">
+      <UniqueIdentifier>{5c9dcf05-e861-4c0d-bcbb-55f0a2770a08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XSP\input">
+      <UniqueIdentifier>{77fe0967-79dd-4737-8f49-831ee711736f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XSP\network">
+      <UniqueIdentifier>{63de172c-fcc3-4059-b76a-c6ae6904589c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XSP\os">
+      <UniqueIdentifier>{aa65cc9a-6e40-43ec-8530-ec2599ed761f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\core\X2DMovie.cpp">
+      <Filter>Movie</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XActionMap.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XActor.cpp">
+      <Filter>Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XActorContainer.cpp">
+      <Filter>Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XActorLuaGlue.cpp">
+      <Filter>Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XAnimController.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XAnimSprite.cpp">
+      <Filter>Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XAnimTrack.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XBaseSprite.cpp">
+      <Filter>Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XBitmap.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XBone.cpp">
+      <Filter>SkinMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XBoundingBox.cpp">
+      <Filter>Intersection</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XBsp.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XCamera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XCameraObject.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XCharSet.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XChaseController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XColor.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XConsole.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XCursor.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XDebugUtilLib.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XDecalMgr.cpp">
+      <Filter>Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XDistortionPostEffect.cpp">
+      <Filter>PostEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XDistortionSC.cpp">
+      <Filter>ShaderController</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XDOFPostEffect.cpp">
+      <Filter>PostEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XEdgePostEffect.cpp">
+      <Filter>PostEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XGamePlayer.cpp">
+      <Filter>XSP\network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XGameServer.cpp">
+      <Filter>XSP\network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XGeometry.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XGizmo.cpp">
+      <Filter>Gizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XGizmoController.cpp">
+      <Filter>Gizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XGizmoMgr.cpp">
+      <Filter>Gizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XGizmoMove.cpp">
+      <Filter>Gizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XGizmoRotate.cpp">
+      <Filter>Gizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XGizmoScale.cpp">
+      <Filter>Gizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XGrid.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XHDRPostEffect.cpp">
+      <Filter>PostEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XInputActionMap.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XIntersectLib.cpp">
+      <Filter>Intersection</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XLight.cpp">
+      <Filter>Light</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XLightMgr.cpp">
+      <Filter>Light</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XLookAtController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XLua.cpp">
+      <Filter>Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XLuaScript.cpp">
+      <Filter>Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XMatAnimController.cpp">
+      <Filter>Material</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XMatAnimTrack.cpp">
+      <Filter>Material</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XMaterialColorSC.cpp">
+      <Filter>ShaderController</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XMaterialList.cpp">
+      <Filter>Material</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XMathUtils.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XMatrix3x3.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XMatrix4x4.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XMemoryPool.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XModel.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XModelBlinnPhongSC.cpp">
+      <Filter>ShaderController</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XModelLoader.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XModelLODController.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XModelNoLightSC.cpp">
+      <Filter>ShaderController</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XModelObject.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XModelObjectTemplate.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XModelTemplate.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XMotionBlurPostEffect.cpp">
+      <Filter>PostEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XNetAddress.cpp">
+      <Filter>XSP\network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XOctree.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XPacketPool.cpp">
+      <Filter>XSP\network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XParentChildCombo.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XParticle.cpp">
+      <Filter>ParticleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XParticleEmitter.cpp">
+      <Filter>ParticleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XParticleSystem.cpp">
+      <Filter>ParticleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XParticleSystemBlinnPhongSC.cpp">
+      <Filter>ShaderController</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XParticleSystemNoLightSC.cpp">
+      <Filter>ShaderController</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XParticleSystemTemplate.cpp">
+      <Filter>ParticleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XPhysicsController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XPhysXController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XPlane.cpp">
+      <Filter>Intersection</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XPolygon.cpp">
+      <Filter>Intersection</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XPose.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XPostEffect.cpp">
+      <Filter>PostEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XProfiler.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XProfilerIterator.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XProfilerNode.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XPropertyBag.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XPRZController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XQuaternion.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XRandomNumberLib.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XRay3D.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XRect.cpp">
+      <Filter>Intersection</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XResource.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XResourceList.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XRsa.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XSceneGraph.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XSceneNode.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XScreenFader.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XShaderController.cpp">
+      <Filter>ShaderController</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XShaderMgr.cpp">
+      <Filter>Material</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XShadowCasterSSMSC.cpp">
+      <Filter>ShaderController</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XSkinGeometry.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XSkinMesh.cpp">
+      <Filter>SkinMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XSkinMeshTemplate.cpp">
+      <Filter>SkinMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XSkinObject.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XSkinObjectTemplate.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XSkyBox.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XSmoothFilter.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XSprite.cpp">
+      <Filter>Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XStage.cpp">
+      <Filter>Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XState.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XString.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XTCPPacketizer.cpp">
+      <Filter>XSP\network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XTexSeqSprite.cpp">
+      <Filter>Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XTextureSequence.cpp">
+      <Filter>Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XTimer.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUFOController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUI2DMovie.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUIAnimSprite.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUIButton.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUIComboBox.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUIElement.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUIFrame.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUIHorizontalScrollbar.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUIHorizontalSlider.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUIListBox.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUIListView.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUIProgressBar.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUISpinner.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUISprite.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUITextbox.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUIToggle.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUIVerticalScrollbar.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUIVerticalSlider.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUserIntefaceLuaGlue.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XUserInterface.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XVector2D.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XVector3D.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XVector4D.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XVertexColorSC.cpp">
+      <Filter>ShaderController</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XViewBindController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XViewingFrustum.cpp">
+      <Filter>Intersection</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XVP.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XVPLuaGlue.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XWad.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\XWhiteSC.cpp">
+      <Filter>ShaderController</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\audio\XAudioMgr.cpp">
+      <Filter>XSP\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\audio\XAudioMgrLuaGlue.cpp">
+      <Filter>XSP\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\audio\XBaseSound.cpp">
+      <Filter>XSP\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\audio\XOggSound.cpp">
+      <Filter>XSP\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\audio\XOggStream.cpp">
+      <Filter>XSP\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\audio\XOggVorbisHelpers.cpp">
+      <Filter>XSP\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\audio\XWavSound.cpp">
+      <Filter>XSP\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\audio\XWavStream.cpp">
+      <Filter>XSP\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XBaseGeometryShader.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XBaseIndexBuffer.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XBaseMovie.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XBasePixelShader.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XBaseTexture.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XBaseVertexShader.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XBlendState.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XConstantBuffer.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XDepthStencilState.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XDSMovie.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XGraphicsMgr.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XGraphicsMgrLuaGlue.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XHLSLGeometryShader.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XHLSLPixelShader.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XHLSLVertexShader.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XIndexBuffer.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XMaterial.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XRasterizerState.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XRenderContext.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XRenderTargetArray.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XSamplerState.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XTexture.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XVertexBuffer.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\graphics\XVertexDeclaration.cpp">
+      <Filter>XSP\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\input\XInputMgr.cpp">
+      <Filter>XSP\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\input\XInputMgrLuaGlue.cpp">
+      <Filter>XSP\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\network\XBaseTCPConnection.cpp">
+      <Filter>XSP\network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\network\XBaseTCPListener.cpp">
+      <Filter>XSP\network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\network\XBaseUDPConnection.cpp">
+      <Filter>XSP\network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\network\XNetworkMgr.cpp">
+      <Filter>XSP\network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\network\XNetworkMgrLuaGlue.cpp">
+      <Filter>XSP\network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\network\XTCPConnection.cpp">
+      <Filter>XSP\network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\network\XTCPListener.cpp">
+      <Filter>XSP\network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\network\XUDPConnection.cpp">
+      <Filter>XSP\network</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\os\XHeap.cpp">
+      <Filter>XSP\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\os\XHeapFactory.cpp">
+      <Filter>XSP\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\os\XNew.cpp">
+      <Filter>XSP\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\os\XOSMgr.cpp">
+      <Filter>XSP\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xsp\pc\os\XOSMgrLuaGlue.cpp">
+      <Filter>XSP\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\xvpsdk.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\core\CImg.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\X2DMovie.h">
+      <Filter>Movie</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XActionMap.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XActor.h">
+      <Filter>Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XActorContainer.h">
+      <Filter>Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XActorLuaGlue.h">
+      <Filter>Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XAnimController.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XAnimSprite.h">
+      <Filter>Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XAnimSpriteDesc.h">
+      <Filter>Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XAnimTimeEvent.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XAnimTrack.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XAnimTrackInfo.h">
+      <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XBaseSprite.h">
+      <Filter>Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XBitmap.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XBone.h">
+      <Filter>SkinMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XBoundingBox.h">
+      <Filter>Intersection</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XBSStream.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XCamera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XCameraObject.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XCharSet.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XChaseController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XColor.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XConsole.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XCursor.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XDebugUtilLib.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XDecalMgr.h">
+      <Filter>Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XDistortionPostEffect.h">
+      <Filter>PostEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XDistortionSC.h">
+      <Filter>ShaderController</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XDOFPostEffect.h">
+      <Filter>PostEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XEdgePostEffect.h">
+      <Filter>PostEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XFreeArray.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XFreeList.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XGamePlayer.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XGamePlayerDesc.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XGameServer.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XGameServerDesc.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XGeometry.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XGizmo.h">
+      <Filter>Gizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XGizmoController.h">
+      <Filter>Gizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XGizmoMgr.h">
+      <Filter>Gizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XGizmoMove.h">
+      <Filter>Gizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XGizmoRotate.h">
+      <Filter>Gizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XGizmoScale.h">
+      <Filter>Gizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XGrid.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XHDRPostEffect.h">
+      <Filter>PostEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XInputActionMap.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XIntersectLib.h">
+      <Filter>Intersection</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XLight.h">
+      <Filter>Light</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XLightDesc.h">
+      <Filter>Light</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XLightMgr.h">
+      <Filter>Light</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XLookAtController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XLua.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XLuaScript.h">
+      <Filter>Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XMacroRepeat.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XMatAnimController.h">
+      <Filter>Material</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XMatAnimTrack.h">
+      <Filter>Material</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XMaterialColorSC.h">
+      <Filter>ShaderController</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XMaterialList.h">
+      <Filter>Material</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XMathUtils.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XMatrix3x3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XMatrix4x4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XMemBlockArray.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XMemBlockList.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XMemoryPool.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XModel.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XModelBlinnPhongSC.h">
+      <Filter>ShaderController</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XModelLoader.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XModelLODController.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XModelNoLightSC.h">
+      <Filter>ShaderController</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XModelObject.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XModelObjectTemplate.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XModelTemplate.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XMotionBlurPostEffect.h">
+      <Filter>PostEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XNetAddress.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XNetGlobals.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XNetHost.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XObjectFactory.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XOctree.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XPacketPool.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XParentChildCombo.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XParticle.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XParticleEmitter.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XParticleSystem.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XParticleSystemBlinnPhongSC.h">
+      <Filter>ShaderController</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XParticleSystemNoLightSC.h">
+      <Filter>ShaderController</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XParticleSystemTemplate.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XPhysicsController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XPhysXController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XPlane.h">
+      <Filter>Intersection</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XPolygon.h">
+      <Filter>Intersection</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XPose.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XPostEffect.h">
+      <Filter>PostEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XProfiler.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XProfilerIterator.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XProfilerNode.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XPropertyBag.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XPRZController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XQuaternion.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XRandomNumberLib.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XRay3D.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XRect.h">
+      <Filter>Intersection</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XResource.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XResourceList.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XRsa.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XSceneGraph.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XSceneNode.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XScreenFader.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XShaderController.h">
+      <Filter>ShaderController</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XShaderMgr.h">
+      <Filter>Material</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XShadowCasterSSMSC.h">
+      <Filter>ShaderController</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XSkinGeometry.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XSkinMesh.h">
+      <Filter>SkinMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XSkinMeshTemplate.h">
+      <Filter>SkinMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XSkinObject.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XSkinObjectTemplate.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XSkyBox.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XSmoothFilter.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XSprite.h">
+      <Filter>Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XStage.h">
+      <Filter>Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XState.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XString.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XStringMap.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XTCPPacketizer.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XTexSeqSprite.h">
+      <Filter>Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XTextBoxDesc.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XTextureSequence.h">
+      <Filter>Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XTimer.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUFOController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUI2DMovie.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUIAnimSprite.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUIButton.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUIComboBox.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUIElement.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUIFrame.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUIHorizontalScrollbar.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUIHorizontalSlider.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUIListBox.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUIListView.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUIProgressBar.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUISpinner.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUISprite.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUITextbox.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUIToggle.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUIVerticalScrollbar.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUIVerticalSlider.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUserInterface.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XUserInterfaceLuaGlue.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XVector2D.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XVector3D.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XVector4D.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XVertexColorSC.h">
+      <Filter>ShaderController</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XViewBindController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XViewingFrustum.h">
+      <Filter>Intersection</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XVP.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XVPDesc.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XVPLuaGlue.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\xvpsdk.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XWad.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\XWhiteSC.h">
+      <Filter>ShaderController</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\audio\XAudioMgr.h">
+      <Filter>XSP\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\audio\XAudioMgrLuaGlue.h">
+      <Filter>XSP\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\audio\XBaseSound.h">
+      <Filter>XSP\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\audio\XOggSound.h">
+      <Filter>XSP\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\audio\XOggStream.h">
+      <Filter>XSP\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\audio\XOggVorbisHelpers.h">
+      <Filter>XSP\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\audio\XWavSound.h">
+      <Filter>XSP\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\audio\XWavStream.h">
+      <Filter>XSP\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XBaseGeometryShader.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XBaseIndexBuffer.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XBaseMovie.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XBasePixelShader.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XBaseTexture.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XBaseVertexShader.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XBlendState.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XConstantBuffer.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XDepthStencilState.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XDSMovie.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XGraphicsMgr.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XGraphicsMgrLuaGlue.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XGraphicsMgrTypes.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XHLSLGeometryShader.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XHLSLPixelShader.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XHLSLVertexShader.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XIndexBuffer.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XMaterial.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XRasterizerState.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XRenderContext.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XRenderTargetArray.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XSamplerState.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XTexture.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XVertexBuffer.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\graphics\XVertexDeclaration.h">
+      <Filter>XSP\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\input\XInputMgr.h">
+      <Filter>XSP\input</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\input\XInputMgrLuaGlue.h">
+      <Filter>XSP\input</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\input\XInputMgrTypes.h">
+      <Filter>XSP\input</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\network\XBaseTCPConnection.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\network\XBaseTCPListener.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\network\XBaseUDPConnection.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\network\XNetworkMgr.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\network\XNetworkMgrLuaGlue.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\network\XTCPConnection.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\network\XTCPListener.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\network\XUDPConnection.h">
+      <Filter>XSP\network</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\os\XHeap.h">
+      <Filter>XSP\os</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\os\XHeapFactory.h">
+      <Filter>XSP\os</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\os\XNew.h">
+      <Filter>XSP\os</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\os\XOSMgr.h">
+      <Filter>XSP\os</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\os\XOSMgrLuaGlue.h">
+      <Filter>XSP\os</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\xsp\pc\os\XOSMgrTypes.h">
+      <Filter>XSP\os</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="XVPResources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="inc\core\XBsp.h">
+      <Filter>Core</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

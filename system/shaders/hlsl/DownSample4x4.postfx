@@ -1,0 +1,40 @@
+
+#include "XVPShader.hfx"
+
+
+//*****************************************************************************
+//*****************************************************************************
+struct PS_INPUT
+{
+    float4 position         : SV_Position;
+    float2 texCoord0	    : TEXCOORD0;
+};
+
+struct PS_OUTPUT
+{
+    float4 v4Color : SV_TARGET;  // Pixel color
+};
+Texture2D diffuseMap : register(t0);
+SamplerState MeshTextureSampler : register(s0);
+
+cbuffer NodeConstants : register(USER_SLOT0)
+{
+	float4 g_v4SampleOffsets[MAX_SAMPLES] : packoffset(c0);
+	float4 g_v4SampleWeights[MAX_SAMPLES] : packoffset(c16);
+};
+
+
+PS_OUTPUT mainPS( PS_INPUT input )
+{
+    PS_OUTPUT output      = (PS_OUTPUT)0;
+    const int NUM_SAMPLES = 16;
+
+    for( int i = 0; i < NUM_SAMPLES; i++ )
+    {
+        output.v4Color += diffuseMap.Sample(MeshTextureSampler,input.texCoord0 + g_v4SampleOffsets[i].xy );
+    }
+    
+    output.v4Color /= NUM_SAMPLES;
+
+    return( output );
+}

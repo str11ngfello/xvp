@@ -1,0 +1,86 @@
+
+
+//*****************************************************************************
+//*****************************************************************************
+struct PS_INPUT
+{
+    float4 position         : SV_Position;
+    float2 texCoord0	    : TEXCOORD0;
+    float2 texCoord1	    : TEXCOORD1;
+    float2 texCoord2	    : TEXCOORD2;
+};
+
+struct PS_OUTPUT
+{
+    float4 v4Color : SV_TARGET; 
+};
+
+Texture2D diffuseMap : register(t0);
+SamplerState MeshTextureSampler : register(s0);
+Texture2D velocityMap : register(t1);
+SamplerState velocitySampler : register(s1);
+
+// Globals
+//float4 g_v4MotionBlurParams : register( PS_USER_VECTOR_00 ); ///> x = blur scale, y = velocity clamp
+
+//XXXShawn Halwes 9/7/2006 - 6 samples gets the draw to under 1ms, but 8 looks better.
+
+
+
+
+PS_OUTPUT mainPS( PS_INPUT input )
+{
+	float g_fRatio      = 1/8.0f;
+	int g_fNumSamples = 8; 
+
+    PS_OUTPUT output;        
+    float2    v2PixelVelocity;
+    float4    v4LastCurPixelVelocity;
+    
+    // Get this pixel's current velocity and this pixel's last frame velocity
+    // The velocity is stored in .r & .g channels    
+    v4LastCurPixelVelocity.zw = velocityMap.Sample(velocitySampler,input.texCoord2 ).rg;
+	
+    // If this pixel's current velocity is zero, then use its last frame velocity
+    // otherwise use its current velocity.  We don't want to add them because then 
+    // you would get double the current velocity in the center.  
+    // If you just use the current velocity, then it won't blur where the object 
+    // was last frame because the current velocity at that point would be 0.  Instead 
+    // you could do a filter to find if any neighbors are non-zero, but that requires a lot 
+    // of texture lookups which are limited and also may not work if the object moved too 
+    // far, but could be done multi-pass.
+                            
+    // Calculate square magnitude of current frame's velocity
+    //v2PixelVelocity.y = v4LastCurPixelVelocity.z * v4LastCurPixelVelocity.z +
+      //                  v4LastCurPixelVelocity.w * v4LastCurPixelVelocity.w;	
+
+	// Kill pixel if 0 magnitudes (ie: no blur)
+	//clip( ( v2PixelVelocity.y != 0 ) ? 0 : -1 );	
+                                   
+				
+	// Kill magnitude anomolies out of valid range
+	//clip( ( v2PixelVelocity.y < 2 ) ? 0 : -1 );         	
+
+    //v4LastCurPixelVelocity.zw = clamp( v4LastCurPixelVelocity.zw, -1.0f, 1.0f );
+		
+	//XXXShawn Halwes 8/25/2006 - What's the right direction already?
+	v2PixelVelocity.x = -v4LastCurPixelVelocity.z * 1.0f;//g_v4MotionBlurParams.x;   
+	v2PixelVelocity.y = v4LastCurPixelVelocity.w * 1.0f;//g_v4MotionBlurParams.x;    
+	
+    // For each sample, sum up each sample's color in "Blurred" and then divide
+    // to average the color after all the samples are added.
+    for( int i = 0; i < g_fNumSamples; i++ )
+    {   
+        // Sample texture in a new spot based on pixelVelocity vector 
+        // and average it with the other samples        
+		float2 v2UVOffset = ( v2PixelVelocity * g_fRatio * i ) + input.texCoord0;		
+    
+        // Lookup the color at this new spot
+        output.v4Color.rgb += diffuseMap.Sample(MeshTextureSampler,v2UVOffset ).rgb;        
+    }
+    
+    // Return the average color of all the samples    
+    output.v4Color = float4( output.v4Color.rgb * g_fRatio, 1 );
+        
+    return output;
+}

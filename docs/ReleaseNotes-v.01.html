@@ -1,0 +1,208 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>X</title>
+</head>
+
+<body>
+
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+	<head>
+		<!--TOOLBAR_EXEMPT-->
+		<meta http-equiv="Content-Language" content="en-us">
+		<meta HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+		<style>@import url(readme.htm); 
+	    </style>
+		<base target="_blank">
+	</head>
+	<body>
+		<a NAME="Introduction">
+			<h1>Soular Souls X-VP SDK v.01 Release Notes</h1>
+		</a>
+		<p>The Soular Souls X-VP SDK provides developers with documentation, header 
+			files, and sample code necessary to write software using X-VP. The 
+        X-VP SDK Installer simplifies installation by installing the entire X-VP 
+        source tree (depending on license type) and all sample code, tutorials 
+        and other documentation to your hard disk.&nbsp; It creates several 
+        convenient shortcuts on your Windows Start Menu to enable quick access 
+        to key components of the installation.</p>
+		<h2><br>
+        <a name="File System Layout">What's New in v.01</a>?</h2>
+		<p>This is the first public beta of the X-VP SDK.</p>
+		<h2><br>
+        <a name="File System Layout">File System Layout</a></h2>
+		<p>By default, the X-VP SDK is installed to your hard disk in the 
+        locations described in the following table. Keep in mind, you may or may 
+        not have all the directories listed in the table below depending on the 
+        license type you've been granted.</p>
+		<table border="1" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#111111" id="AutoNumber1">
+			<tr>
+				<td><b>Directory</b></td>
+				<td><b>Contents</b></td>
+			</tr>
+			<tr>
+				<td>\bin</td>
+				<td>Executable utilities for the X-VP SDK</td>
+			</tr>
+			<tr>
+				<td>\dll-debug</td>
+				<td>Debug X-VP DLL build directory</td>
+			</tr>
+			<tr>
+				<td>\dll-release</td>
+				<td>Release X-VP DLL build directory</td>
+			</tr>
+			<tr>
+				<td>\exe-debug</td>
+				<td>Debug X-VP .exe build directory. Used for temporary 
+                development</td>
+			</tr>
+			<tr>
+				<td>\exe-release</td>
+				<td>Release X-VP .exe build directory. Used for temporary 
+                development</td>
+			</tr>
+			<tr>
+				<td>\lib-debug</td>
+				<td>Debug X-VP static lib build directory</td>
+			</tr>
+			<tr>
+				<td>\lib-release</td>
+				<td>Release X-VP static lib build directory</td>
+			</tr>
+			<tr>
+				<td>\inc</td>
+				<td>Various header files needed to build X-VP applications</td>
+			</tr>
+			<tr>
+				<td>\src</td>
+				<td>Source files for X-VP</td>
+			</tr>
+			<tr>
+				<td>\lib</td>
+				<td>Library files needed to link X-VP applications</td>
+			</tr>
+			<tr>
+				<td>\tutorials</td>
+				<td>The X-VP tutorial set including code samples</td>
+			</tr>
+			<tr>
+				<td>\tools</td>
+				<td>Tools associated with X-VP</td>
+			</tr>
+			<tr>
+				<td>\exporters</td>
+				<td>Various content exporters for X-VP</td>
+			</tr>
+			<tr>
+				<td>\docs</td>
+				<td>Contains all X-VP documentation</td>
+			</tr>
+			<tr>
+				<td>\scrapbook</td>
+				<td>Old items that are not compiled or used, but may be useful 
+                in the future</td>
+			</tr>
+			<tr>
+				<td>\unsupported</td>
+				<td>Unsupported code and miscellaneous items</td>
+			</tr>
+		</table>
+		<h2><br>
+        <a name="Prerelease">Prerelease Content </a>
+		</h2>
+		<p>This version of the X-VP SDK includes prerelease content, enabling 
+        you to start developing your application before the technology is 
+        released. However, technologies can change prior to their final release. 
+        Therefore, you may want to wait until the SDK reaches version 1.0, which 
+        will be considered the first stable and fully supported commercial 
+        release.&nbsp; If you decide to release your commercial application 
+        prior to version 1.0, discounted licenses may be obtained, please see
+        <a href="http://www.soularsouls.com">http://www.soularsouls.com</a> for 
+        the current offerings.&nbsp; </p>
+		<p>For 
+			more information, see the license included with this SDK 
+        distribution. Additionally, some  material is a 
+			preview of new or planned functionality not yet available in the 
+        SDK.</p>
+		<h2><br>
+        <a name="Building Applications">Building Applications</a></h2>
+		<p>The details of configuring compiler and linker options are described in the <i>Getting 
+				Started Guide.&nbsp; </i>The X-VP SDK may require other 3rd 
+        party SDKs to be installed in order to function properly such as 
+        Microsoft's DirectX or OpenAL.&nbsp; Please see the <i>Getting 
+				Started Guide</i> for more information on the setup required for 
+        your particular environment.&nbsp; <br>
+&nbsp;</p>
+		<h2><a name="Building Applications">Tested Compilers/Build Environments</a></h2>
+		<p>The X-VP SDK has been tested with Visual Studio .NET.&nbsp; Over 
+        time, we will extend support for other compilers as users will 
+        inevitably try others during development.&nbsp; If you are using another 
+        system successfully, please let us know so we can add it to the list of 
+        supported compilers.&nbsp; Send email to
+        <a href="mailto:support@soularsouls.com">support@soularsouls.com</a>.&nbsp; 
+			For more information about Visual Studio, see the <a href="http://msdn.microsoft.com/vstudio/">
+				Microsoft Visual Studio home page</a>.
+		</p>
+		<h2><br>
+        <a name="Development Notes">Development Notes</a>
+		</h2>
+		<ul>
+			<li>
+			Thus far we've only tested 32-bit Windows Systems, but we don't 
+            suspect any 64-bit issues.&nbsp; Until such time that X-VP is 
+            targeted towards 64-bit operating systems, we cannot officially 
+            support X-VP development on 64-bit systems.&nbsp;
+			<li>
+			At this time, only the Windows XSP is available.
+			</ul>
+		<h2><br>
+        <a name="Development Notes">Tutorials and Sample Code</a></h2>
+		<p>The X-VP SDK includes several code examples that demonstrate how to 
+        use X-VP.&nbsp; A quick way to access these tutorials is via the Start 
+        Menu after X-VP installation.&nbsp; The tutorials start with simple 
+        concepts and progress towards more advanced practices.&nbsp; We 
+        recommend you start out at the beginning of the tutorials and work your 
+        way through them one by one making sure you understand the concepts 
+        presented in each one as later tutorials may be combinations of ideas 
+        presented in earlier tutorials.</p>
+        <p>Keep in mind as you work through the sample code that clarity and 
+        ease of explanation were always chosen over optimization and algorithm 
+        choice.&nbsp; That means that a tutorial's main goal is to explain the 
+        specific topic at hand without clouding the code with excessive error 
+        handling or optimizations that might make the code less straight 
+        forward.</p>
+		<h2><br>
+        <a name="Developer Support">Developer Support </a>
+		</h2>
+		<p>For support, email <a href="mailto:support@soularsouls.com">
+        support@soularsouls.com</a>.</p>
+		<h2><br>
+        <a name="License Agreement">License Agreement </a>
+		</h2>
+		<p>The contents included in the X-VP SDK are licensed to you, the end 
+        user. Your use of the SDK is subject to the terms of an End&nbsp;User License 
+        Agreement (EvalLicense.doc) accompanying the SDK which is located in the 
+        \docs directory of your X-VP installation. You must read and accept the terms of the EULA before you access 
+			or use the SDK. If you do not agree to the terms of the EULA, you are not 
+			authorized to use the SDK.
+		</p>
+		<p>You must include an acknowledgment somewhere in your product stating that it includes X-VP software from Soular Souls Studios.  The license agreement is deemed accepted by you if you choose to 
+        install the SDK on your hard drive.</p>
+		<h2><br>
+        <a name="Feedback">Feedback </a>
+		</h2>
+		<p>Submit bug reports or suggestions for the X-VP SDK to
+        <a href="mailto:sdkfdbk@microsoft.com">support@soularsouls.com</a>.
+		</p>
+		<BR>
+		<p>©2005 Soular Souls Studios.</p>
+	</body>
+</html>
+</body>
+
+</html>

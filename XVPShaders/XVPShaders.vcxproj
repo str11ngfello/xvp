@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4169D97E-C049-4639-A161-897427EA6952}</ProjectGuid>
+    <RootNamespace>XVPShaders</RootNamespace>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.21006.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\system\shaders\hlsl\Fullscreen Quad.fx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tvs_4_0 /EmainVS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).vso" "%(FullPath)" &amp;
+"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).vso" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).vso;$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tvs_4_0 /EmainVS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).vso" "%(FullPath)" &amp;
+"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).vso" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).vso;$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Material Color.fx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tvs_4_0 /EmainVS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).vso" "%(FullPath)" &amp;
+"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).vso" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).vso;$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tvs_4_0 /EmainVS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).vso" "%(FullPath)" &amp;
+"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).vso" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).vso;$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Pink.fx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tvs_4_0 /EmainVS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).vso" "%(FullPath)" &amp;
+"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).vso" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).vso;$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tvs_4_0 /EmainVS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).vso" "%(FullPath)" &amp;
+"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).vso" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).vso;$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Shadow Caster SSM.fx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tvs_4_0 /EmainVS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).vso" "%(FullPath)" &amp;
+"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).vso" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).vso;$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tvs_4_0 /EmainVS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).vso" "%(FullPath)" &amp;
+"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).vso" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).vso;$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Sprite.fx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tvs_4_0 /EmainVS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).vso" "%(FullPath)" &amp;
+"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).vso" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).vso;$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tvs_4_0 /EmainVS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).vso" "%(FullPath)" &amp;
+"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).vso" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).vso;$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Vertex Color.fx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tvs_4_0 /EmainVS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).vso" "%(FullPath)" &amp;
+"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).vso" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).vso;$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tvs_4_0 /EmainVS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).vso" "%(FullPath)" &amp;
+"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).vso" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).vso;$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\White.fx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tvs_4_0 /EmainVS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).vso" "%(FullPath)" &amp;
+"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).vso" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).vso;$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tvs_4_0 /EmainVS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).vso" "%(FullPath)" &amp;
+"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).vso" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).vso;$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\AdaptLum.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Bloom.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\blue.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\BrightPass.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Copy.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\distortion.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\DOF.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\DownSample2x2.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\DownSample4x4.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\FinalLum.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\GaussianBlur5x5.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\green.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\HDRTonemap.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\InitialLum.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\MotionBlur.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\red.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\yellow.postfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)$(IntDir)%(Filename)%(Extension).pso"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)\$(IntDir)%(Filename)%(Extension).pso;%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compiling %(Identity)...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(DXSDK_DIR)\Utilities\bin\x86\fxc" /Zpr /Tps_4_0 /EmainPS /nologo /Fo"$(ProjectDir)\$(IntDir)%(Identity).pso" "%(FullPath)" &amp;
+"$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad" -a "$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad" "$(ProjectDir)\$(IntDir)%(Identity).pso"
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)\$(IntDir)%(Identity).pso;%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="..\system\shaders\hlsl\Model-Blinn Phong.tfx" />
+    <CustomBuild Include="..\system\shaders\hlsl\Model-Distortion.tfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="..\system\shaders\hlsl\Model-No Light.tfx" />
+    <CustomBuild Include="..\system\shaders\hlsl\Particle System-Blinn Phong.tfx">
+      <FileType>Document</FileType>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Outputs)</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="..\system\shaders\hlsl\Particle System-No Light.tfx" />
+    <None Include="..\system\shaders\hlsl\BPLighting.hfx" />
+    <None Include="..\system\shaders\hlsl\Utilities.hfx" />
+    <None Include="..\system\shaders\hlsl\XVPShader.hfx" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

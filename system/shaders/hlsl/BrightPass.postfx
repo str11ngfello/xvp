@@ -1,0 +1,89 @@
+#include "XVPShader.hfx"
+
+//*****************************************************************************
+//*****************************************************************************
+struct PS_INPUT
+{
+    float4 position         : SV_Position;
+    float2 texCoord0	    : TEXCOORD0;
+};
+
+
+struct PS_OUTPUT
+{
+    float4 v4BloomColor : SV_TARGET;  // Pixel color
+};
+
+// Structures
+///
+/// Pixel shader output
+///
+/*struct PS_OUTPUT
+{
+    float4 v4BloomColor : COLOR0; ///> Pixel color
+    float4 v4StarColor : COLOR1; ///> Pixel color
+};*/
+
+
+Texture2D colorMap : register(t0);
+SamplerState colorMapSampler : register(s0);
+
+Texture2D adaptedLum : register(t1);
+SamplerState adaptedLumSampler : register(s1);
+
+//Texture2D colorMap : register(t0);
+//SamplerState colorSampler : register(s0);
+
+// Samplers
+//sampler g_samColor      : register( s0 );
+//sampler g_samAdaptedLum : register( s1 );
+//sampler g_samStencilMask : register( s2 );
+
+// Globals
+cbuffer NodeConstants : register(USER_SLOT0)
+{
+	float4 g_v4BrightPassParams : packoffset(c0); //x = middle gray,y = threshold,z = offset,w = luminance white
+	float4 g_v4HDRParams : packoffset(c1); //x = bloom scale,y = star scale
+};
+
+
+PS_OUTPUT mainPS( PS_INPUT input )
+{
+    PS_OUTPUT output      		= (PS_OUTPUT)0;
+    float4    v4Color     		= colorMap.Sample(colorMapSampler,input.texCoord0 );
+    float     fAdaptedLum 		= adaptedLum.Sample(adaptedLumSampler,float2( 0.5f, 0.5f ) ).r;
+	//float	  fMaskColor  		= tex2D( g_samStencilMask, input.v2UV ).b;
+	float3    v3BrightPassColor = (float3)0;
+	//int		  fMaskValue		= 0;
+	
+    // Determine what the pixel's value will be after tone-mapping occurs
+	v4Color.rgb *= g_v4BrightPassParams.x / ( fAdaptedLum + 0.001f );    
+
+    // Subtract out dark pixels
+	v4Color.rgb -= g_v4BrightPassParams.y;    
+        
+    // Clamp to 0
+	v4Color.rgb = max( v4Color.rgb, 0.0f );    
+    
+    // Map the resulting value into the 0 to 1 range. Higher values for
+    // brigh pass offset will isolate lights from illuminated scene 
+    // objects.
+	v3BrightPassColor.rgb = v4Color.rgb * ( 1.0f + ( v4Color.rgb / ( g_v4BrightPassParams.w * g_v4BrightPassParams.w ) ) );
+	v3BrightPassColor.rgb /= ( g_v4BrightPassParams.z + v4Color.rgb );
+
+	output.v4BloomColor.rgb = v3BrightPassColor;
+	output.v4BloomColor.a = 1.0f;
+	//output.v4StarColor.rgb = v3BrightPassColor;
+	//output.v4StarColor.a = 1.0f;
+	
+	// Modulate by bits set in stencil
+	// We can't use bitwise ops on anything other than constants (lame Xenon)
+	// Let the bloom disable flag be 0x01, star enable be 0x10
+	/*fMaskValue = round( fMaskColor * 255.0f );
+	if ( (fMaskValue == 1) || (fMaskValue == 3) )
+		output.v4BloomColor.rgb = (float3)0;
+	if ( (fMaskValue == 0) || (fMaskValue == 1) )
+		output.v4StarColor.rgb = (float3)0;*/
+
+    return( output );
+}

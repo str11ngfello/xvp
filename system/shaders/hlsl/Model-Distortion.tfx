@@ -1,0 +1,132 @@
+//-----------------------------------------------------------------------------
+//Shader Description
+//-----------------------------------------------------------------------------
+//!!| Screen space distortion with various per-pixel options. 
+//@@| VS
+//@@| PS
+
+
+//-----------------------------------------------------------------------------
+//Shader Features
+//-----------------------------------------------------------------------------
+#ifdef U_ANIM
+//##| U_ANIM |U Axis Texture Animation |Provides texture animation in the U direction.
+#endif
+#ifdef V_ANIM
+//##| V_ANIM |V Axis Texture Animation |Provides texture animation in the V direction.
+#endif
+
+
+//-----------------------------------------------------------------------------
+//Shader Maps
+//-----------------------------------------------------------------------------
+//$$| 2DTexture |XYZ |Normal Map |Texture containing normals to be used for distortion.  
+Texture2D normalMap : register(#TEX_ENUM);           
+SamplerState normalMapSam : register(#SAM_ENUM);
+
+
+//-----------------------------------------------------------------------------
+//Shader Parameters
+//-----------------------------------------------------------------------------
+//$$| float |U Anim Speed |[-2#2#.001] |(0.0) |Animation speed in the U direction |U_ANIM
+//$$| float |V Anim Speed |[-2#2#.001] |(0.0) |Animation speed in the V direction |V_ANIM
+
+
+#include "XVPShader.hfx"
+ 
+
+//-----------------------------------------------------------------------------
+//Vertex Shader
+//-----------------------------------------------------------------------------
+struct VS_INPUT
+{
+    float4 v4Position		: POSITION;
+    float4 v4VertColor		: COLOR;
+    float3 v3VertNormal		: NORMAL;
+	float2 v2UV				: TEXCOORD0;
+    float3 v3Tangent		: TANGENT;
+    float3 v3Binormal		: BINORMAL;
+};
+
+struct VS_OUTPUT
+{
+    float4 v4Position		: SV_Position;
+	float4 v4VertColor		: COLOR0;
+	float3 v3VertNormal		: NORMAL;
+    float2 v2UV				: TEXCOORD0;
+	float3 v3Tangent		: TEXCOORD1;
+	float3 v3Binormal		: TEXCOORD2;
+};
+
+cbuffer VSConstants : register(USER_SLOT0)
+{
+	float4x4 worldViewProjMatrix : packoffset(c0);
+};
+
+VS_OUTPUT mainVS(VS_INPUT IN)				
+{
+	VS_OUTPUT OUT;
+	
+	OUT.v4Position = mul(IN.v4Position,worldViewProjMatrix);
+	OUT.v4VertColor = IN.v4VertColor;
+	OUT.v3VertNormal = IN.v3VertNormal;
+	OUT.v2UV = IN.v2UV;
+	OUT.v3Tangent = IN.v3Tangent;
+	OUT.v3Binormal = -IN.v3Binormal;
+
+	return OUT;
+}
+
+
+//-----------------------------------------------------------------------------
+//Pixel Shader
+//-----------------------------------------------------------------------------
+struct PS_INPUT
+{
+	float4 v4Position		: SV_Position;
+	float4 v4VertColor		: COLOR;
+	float3 v3VertNormal		: NORMAL;
+    float2 v2UV				: TEXCOORD0;
+	float3 v3Tangent		: TEXCOORD1;
+	float3 v3Binormal		: TEXCOORD2;
+};
+
+cbuffer PSConstants : register(USER_SLOT1)
+{
+	float4 params	: packoffset(c0);  //x = u speed,y = v speed
+};
+
+float4 mainPS(PS_INPUT IN) : SV_Target			
+{
+	//Normalize our interpolated normals
+	IN.v3VertNormal = normalize(IN.v3VertNormal);
+	IN.v3Tangent = normalize(IN.v3Tangent);
+	IN.v3Binormal = normalize(IN.v3Binormal);
+
+	float2 v2AnimatedUV = IN.v2UV;
+	
+#ifdef U_ANIM
+	v2AnimatedUV.x += v4FogColor.w * params.x;
+#endif
+#ifdef V_ANIM
+	v2AnimatedUV.y += v4FogColor.w * params.y;
+#endif
+
+	//Get the normal from the normal map and unbias it
+	float3 v3PixelNormal = normalMap.Sample(normalMapSam,v2AnimatedUV);
+	/*v3PixelNormal = (2 * v3PixelNormal) - 1;
+	v3PixelNormal = transformVecFromTangentSpace(v3PixelNormal,
+												 IN.v3VertNormal,
+												 IN.v3Tangent,
+												 IN.v3Binormal);
+	
+	
+	v3PixelNormal = (v3PixelNormal +1) *.5f;*/
+
+	return float4(v3PixelNormal,1);
+}
+
+
+
+
+            

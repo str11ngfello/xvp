@@ -1,0 +1,52 @@
+
+
+
+//*****************************************************************************
+//*****************************************************************************
+struct PS_INPUT
+{
+    float4 position         : SV_Position;
+    float2 texCoord0	    : TEXCOORD0;
+};
+
+
+
+struct PS_OUTPUT
+{
+    float4 RGBColor : SV_TARGET;  // Pixel color
+};
+
+Texture2D diffuseMap : register(t0);
+SamplerState MeshTextureSampler : register(s0);
+
+PS_OUTPUT mainPS( PS_INPUT In ) 
+{ 
+    PS_OUTPUT Output;
+   
+    //Pencil Sketch
+    float4 constant = float4(0.30f, 0.59f, 0.11f, 1.0f);
+    
+    float4 r0 = diffuseMap.Sample(MeshTextureSampler,In.texCoord0);
+    float4 r1 = diffuseMap.Sample(MeshTextureSampler,In.texCoord0 + float2(.001f,.001f));
+    float4 r2 = diffuseMap.Sample(MeshTextureSampler,In.texCoord0 + float2(.001f,-.001f));
+    float4 r3 = dot(r0.xyz,constant.xyz);
+    r1.xyz = dot(r1.xyz,constant.xyz);
+    r2.xyz = dot(r1.xyz,constant.xyz);
+    
+    r1 = r3 + -r1;
+    r2 = r3 + -r2;
+    
+    r1 = abs(r1);
+    r2 = abs(r2);
+    
+    r1 = 1 - ((r1+r2)*4);
+    
+    r1.a = 1.0f;
+    
+    Output.RGBColor = r1;
+
+    return Output;
+}
+
+
+

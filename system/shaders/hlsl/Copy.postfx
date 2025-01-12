@@ -1,0 +1,28 @@
+
+#include "XVPShader.hfx"
+
+//*****************************************************************************
+//*****************************************************************************
+struct PS_INPUT
+{
+    float4 position         : SV_Position;
+    float2 texCoord0	    : TEXCOORD0;
+};
+  
+ 
+struct PS_OUTPUT
+{
+    float4 v4Color : SV_TARGET;  // Pixel color
+};
+
+Texture2D diffuseMap : register(t0);
+SamplerState MeshTextureSampler : register(s0);
+
+PS_OUTPUT mainPS( PS_INPUT input )
+{
+    PS_OUTPUT output  = (PS_OUTPUT)0;
+    
+    output.v4Color = diffuseMap.Sample(MeshTextureSampler,input.texCoord0 );
+    
+    return( output );
+}

@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9.00"
+	Name="XVPShaders"
+	ProjectGUID="{4169D97E-C049-4639-A161-897427EA6952}"
+	RootNamespace="XVPShaders"
+	SccProjectName="Perforce Project"
+	SccLocalPath="..\.."
+	SccProvider="MSSCCI:Perforce SCM"
+	TargetFrameworkVersion="196613"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="10"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="10"
+			CharacterSet="2"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="HLSL"
+			>
+			<File
+				RelativePath="..\system\shaders\hlsl\Fullscreen Quad.fx"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling $(InputFileName)..."
+						CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tvs_4_0 /EmainVS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+						Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot;;&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling $(InputFileName)..."
+						CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tvs_4_0 /EmainVS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+						Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot;;&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\system\shaders\hlsl\Material Color.fx"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling $(InputFileName)..."
+						CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tvs_4_0 /EmainVS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+						Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot;;&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling $(InputFileName)..."
+						CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tvs_4_0 /EmainVS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+						Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot;;&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\system\shaders\hlsl\Pink.fx"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling $(InputFileName)..."
+						CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tvs_4_0 /EmainVS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+						Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot;;&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling $(InputFileName)..."
+						CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tvs_4_0 /EmainVS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+						Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot;;&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\system\shaders\hlsl\Shadow Caster SSM.fx"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling $(InputFileName)..."
+						CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tvs_4_0 /EmainVS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+						Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot;;&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling $(InputFileName)..."
+						CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tvs_4_0 /EmainVS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+						Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot;;&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\system\shaders\hlsl\Sprite.fx"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling $(InputFileName)..."
+						CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tvs_4_0 /EmainVS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+						Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot;;&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling $(InputFileName)..."
+						CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tvs_4_0 /EmainVS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+						Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot;;&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\system\shaders\hlsl\Vertex Color.fx"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling $(InputFileName)..."
+						CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tvs_4_0 /EmainVS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+						Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot;;&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling $(InputFileName)..."
+						CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tvs_4_0 /EmainVS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+						Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot;;&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\system\shaders\hlsl\White.fx"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling $(InputFileName)..."
+						CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tvs_4_0 /EmainVS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+						Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot;;&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Compiling $(InputFileName)..."
+						CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tvs_4_0 /EmainVS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+						Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).vso&quot;;&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+					/>
+				</FileConfiguration>
+			</File>
+			<Filter
+				Name="PostFX"
+				>
+				<File
+					RelativePath="..\system\shaders\hlsl\AdaptLum.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\Bloom.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\blue.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\BrightPass.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\Copy.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\distortion.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\DOF.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\DownSample2x2.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\DownSample4x4.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\FinalLum.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\GaussianBlur5x5.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\green.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\HDRTonemap.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\InitialLum.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\MotionBlur.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\red.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\yellow.postfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Compiling $(InputFileName)..."
+							CommandLine="&quot;$(DXSDK_DIR)\Utilities\bin\x86\fxc&quot; /Zpr /Tps_4_0 /EmainPS /nologo /Fo&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot; &quot;$(InputPath)&quot; &amp;&#x0D;&#x0A;&quot;$(XVPSDK_DIR)\xvpsdk\system\tools\xvpwad&quot; -a &quot;$(XVPSDK_DIR)\xvpsdk\system\shaders\hlsl\ShaderCore.wad&quot; &quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;&#x0D;&#x0A;"
+							Outputs="&quot;$(ProjectDir)\$(IntDir)\$(InputFileName).pso&quot;"
+						/>
+					</FileConfiguration>
+				</File>
+			</Filter>
+			<Filter
+				Name="Templates"
+				>
+				<File
+					RelativePath="..\system\shaders\hlsl\Model-Blinn Phong.tfx"
+					>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\Model-Distortion.tfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description=""
+							CommandLine=""
+							Outputs=""
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description=""
+							CommandLine=""
+							Outputs=""
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\Model-No Light.tfx"
+					>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\Particle System-Blinn Phong.tfx"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description=""
+							CommandLine=""
+							Outputs=""
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="VCCustomBuildTool"
+							Description=""
+							CommandLine=""
+							Outputs=""
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\Particle System-No Light.tfx"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="Headers"
+				>
+				<File
+					RelativePath="..\system\shaders\hlsl\BPLighting.hfx"
+					>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\Utilities.hfx"
+					>
+				</File>
+				<File
+					RelativePath="..\system\shaders\hlsl\XVPShader.hfx"
+					>
+				</File>
+			</Filter>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

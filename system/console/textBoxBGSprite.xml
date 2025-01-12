@@ -1,0 +1,16 @@
+<!-- This is the XUIButton XML format.  The following attributes are available.  Note
+that some are required while others are optional.
+
+[Attributes]
+
+
+-->
+
+
+<sprite
+		SrcLeft = 0
+		SrcTop = 0
+		SrcRight = 32
+		SrcBottom = 2
+		TextureFile = "orangeBG.png">
+</sprite>

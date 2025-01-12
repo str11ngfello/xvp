@@ -1,0 +1,40 @@
+
+
+
+//*****************************************************************************
+//*****************************************************************************
+struct PS_INPUT
+{
+    float4 position         : SV_Position;
+    float2 texCoord0	    : TEXCOORD0;
+};
+
+
+
+struct PS_OUTPUT
+{
+    float4 RGBColor : SV_TARGET;  // Pixel color
+};
+
+Texture2D diffuseMap : register(t0);
+SamplerState MeshTextureSampler : register(s0);
+
+PS_OUTPUT mainPS( PS_INPUT In ) 
+{ 
+    PS_OUTPUT Output;
+   
+    //Emboss
+    float4 color;
+    color.a = 1.0f;
+    color.rgb = 0.5f;
+    color -= diffuseMap.Sample(MeshTextureSampler, In.texCoord0 - 0.001) * 2.0f;
+    color += diffuseMap.Sample(MeshTextureSampler, In.texCoord0 + 0.001) * 2.0f;
+    color.rgb = (color.r + color.g + color.b) / 3.0f;
+    
+    Output.RGBColor = color; 
+
+    return Output;
+}
+
+
+

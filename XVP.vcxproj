@@ -1,0 +1,805 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugEditor|Win32">
+      <Configuration>DebugEditor</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugEditor|x64">
+      <Configuration>DebugEditor</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugPC|Win32">
+      <Configuration>DebugPC</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugPC|x64">
+      <Configuration>DebugPC</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugSetup|Win32">
+      <Configuration>DebugSetup</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugSetup|x64">
+      <Configuration>DebugSetup</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="FinalPC|Win32">
+      <Configuration>FinalPC</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="FinalPC|x64">
+      <Configuration>FinalPC</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseEditor|Win32">
+      <Configuration>ReleaseEditor</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseEditor|x64">
+      <Configuration>ReleaseEditor</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleasePC|Win32">
+      <Configuration>ReleasePC</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleasePC|x64">
+      <Configuration>ReleasePC</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FFACE166-E600-452C-BE53-680D2C62C0C3}</ProjectGuid>
+    <RootNamespace>XVP</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugSetup|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseEditor|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugEditor|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='FinalPC|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePC|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugPC|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugSetup|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseEditor|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugEditor|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='FinalPC|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePC|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugPC|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugSetup|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseEditor|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugEditor|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='FinalPC|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePC|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugPC|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugSetup|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseEditor|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugEditor|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='FinalPC|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePC|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugPC|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.21006.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugPC|Win32'">lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugPC|Win32'">obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugPC|x64'">lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugPC|x64'">obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleasePC|Win32'">lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleasePC|Win32'">obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleasePC|x64'">lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleasePC|x64'">obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='FinalPC|Win32'">lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='FinalPC|Win32'">obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='FinalPC|x64'">lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='FinalPC|x64'">obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugEditor|Win32'">lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugEditor|Win32'">obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugEditor|x64'">$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugEditor|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseEditor|Win32'">lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseEditor|Win32'">obj\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseEditor|x64'">$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseEditor|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugSetup|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugSetup|x64'">$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugSetup|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='DebugEditor|Win32'">$(ProjectName)-$(Platform)-Editor-d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugPC|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>inc\xsp\pc\audio;inc\xsp\pc\graphics;inc\xsp\pc\input;inc\xsp\pc\network;inc\xsp\pc\os;inc\core;inc\;..\libs\OpenAL-1.1\include;..\libs\freealut-1.1.0-bin\include;..\libs\tinyxml-2.4.3;..\libs\libogg-1.1.3\include;..\libs\lua-5.1.4\include;..\libs\libvorbis-1.1.2\include;..\libs\zlib-1.2.3</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;_DEBUG;_WINDOWS;XSP_WINDOWS;XVP_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>xvpsdk.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)-$(Platform)-d.lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugPC|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>inc\xsp\pc\audio;inc\xsp\pc\graphics;inc\xsp\pc\input;inc\xsp\pc\network;inc\xsp\pc\os;inc\core;..\libs\OpenAL-1.1\include;..\libs\freealut-1.1.0-bin\include;..\libs\tinyxml-2.4.3;..\libs\libogg-1.1.3\include;..\libs\lua-5.0.2\include;..\libs\libvorbis-1.1.2\include;..\libs\zlib-1.2.3;C:\Program Files\NVIDIA Corporation\NVIDIA PhysX SDK\v2.8.1\SDKs\Physics\include;C:\Program Files\NVIDIA Corporation\NVIDIA PhysX SDK\v2.8.1\SDKs\Foundation\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;XVP_DEBUG;PC_VERSION;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>xvpsdk.h</PrecompiledHeaderFile>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)-$(Platform)-d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePC|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>inc\xsp\pc\audio;inc\xsp\pc\graphics;inc\xsp\pc\input;inc\xsp\pc\network;inc\xsp\pc\os;inc\core;inc\;..\libs\OpenAL-1.1\include;..\libs\freealut-1.1.0-bin\include;..\libs\tinyxml-2.4.3;..\libs\libogg-1.1.3\include;..\libs\lua-5.1.4\include;..\libs\libvorbis-1.1.2\include;..\libs\zlib-1.2.3</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;XSP_WINDOWS;XVP_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>xvpsdk.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)-$(Platform).lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePC|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>inc\xsp\pc\audio;inc\xsp\pc\graphics;inc\xsp\pc\input;inc\xsp\pc\network;inc\xsp\pc\os;inc\core;..\OpenAL-1.1\include;..\freealut-1.1.0-bin\include;..\tinyxml-2.4.3;..\libogg-1.1.3\include;..\lua-5.0.2\include;..\libvorbis-1.1.2\include;C:\Program Files\AGEIA Technologies\SDK\v2.7.2\SDKs\Physics\include;C:\Program Files\AGEIA Technologies\SDK\v2.7.2\SDKs\Foundation\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;XVP_RELEASE;PC_VERSION;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)-$(Platform)-r.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='FinalPC|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>inc\xsp\pc\audio;inc\xsp\pc\graphics;inc\xsp\pc\input;inc\xsp\pc\network;inc\xsp\pc\os;inc\core;inc\;..\libs\OpenAL-1.1\include;..\libs\freealut-1.1.0-bin\include;..\libs\tinyxml-2.4.3;..\libs\libogg-1.1.3\include;..\libs\lua-5.1.4\include;..\libs\libvorbis-1.1.2\include;..\libs\zlib-1.2.3</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;XSP_WINDOWS;XVP_FINAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>xvpsdk.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)-$(Platform).lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='FinalPC|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>inc\xsp\pc\audio;inc\xsp\pc\graphics;inc\xsp\pc\input;inc\xsp\pc\network;inc\xsp\pc\os;inc\core;..\OpenAL-1.1\include;..\freealut-1.1.0-bin\include;..\tinyxml-2.4.3;..\libogg-1.1.3\include;..\lua-5.0.2\include;..\libvorbis-1.1.2\include;C:\Program Files\AGEIA Technologies\SDK\v2.7.2\SDKs\Physics\include;C:\Program Files\AGEIA Technologies\SDK\v2.7.2\SDKs\Foundation\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;XVP_FINAL;PC_VERSION;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)-$(Platform)-f.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugEditor|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\inc\xsp\pc\audio;.\inc\xsp\pc\graphics;.\inc\xsp\pc\input;.\inc\xsp\pc\network;.\inc\xsp\pc\os;.\inc\core;inc\;..\libs\OpenAL-1.1\include;..\libs\freealut-1.1.0-bin\include;..\libs\tinyxml-2.4.3;..\libs\libogg-1.1.3\include;..\libs\lua-5.0.2\include;..\libs\libvorbis-1.1.2\include;..\libs\zlib-1.2.3</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;_DEBUG;_WINDOWS;XSP_WINDOWS;XVP_DEBUG;XVP_EDITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>xvpsdk.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>lib\$(ProjectName)-$(Platform)-Editor-d.lib</OutputFile>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugEditor|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>inc\xsp\pc\audio;inc\xsp\pc\graphics;inc\xsp\pc\input;inc\xsp\pc\network;inc\xsp\pc\os;inc\core;..\OpenAL-1.1\include;..\freealut-1.1.0-bin\include;..\tinyxml-2.4.3;..\libogg-1.1.3\include;..\lua-5.0.2\include;..\libvorbis-1.1.2\include;..\zlib-1.2.3;C:\Program Files\AGEIA Technologies\SDK\v2.7.2\SDKs\Physics\include;C:\Program Files\AGEIA Technologies\SDK\v2.7.2\SDKs\Foundation\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;XVP_DEBUG;PC_VERSION;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>xvpsdk.h</PrecompiledHeaderFile>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)-$(Platform)-d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseEditor|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>inc\xsp\pc\audio;inc\xsp\pc\graphics;inc\xsp\pc\input;inc\xsp\pc\network;inc\xsp\pc\os;inc\core;inc\;..\libs\OpenAL-1.1\include;..\libs\freealut-1.1.0-bin\include;..\libs\tinyxml-2.4.3;..\libs\libogg-1.1.3\include;..\libs\lua-5.1.4\include;..\libs\libvorbis-1.1.2\include;..\libs\zlib-1.2.3</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_DEPRECATE;NDEBUG;_WINDOWS;XSP_WINDOWS;XVP_RELEASE;XVP_EDITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>xvpsdk.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)-$(Platform)-Editor.lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseEditor|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>inc\xsp\pc\audio;inc\xsp\pc\graphics;inc\xsp\pc\input;inc\xsp\pc\network;inc\xsp\pc\os;inc\core;..\OpenAL-1.1\include;..\freealut-1.1.0-bin\include;..\tinyxml-2.4.3;..\libogg-1.1.3\include;..\lua-5.0.2\include;..\libvorbis-1.1.2\include;C:\Program Files\AGEIA Technologies\SDK\v2.7.2\SDKs\Physics\include;C:\Program Files\AGEIA Technologies\SDK\v2.7.2\SDKs\Foundation\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;XVP_RELEASE;PC_VERSION;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)-$(Platform)-r.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugSetup|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>inc\xsp\pc\audio;inc\xsp\pc\graphics;inc\xsp\pc\input;inc\xsp\pc\network;inc\xsp\pc\os;inc\core;inc\;..\libs\OpenAL-1.1\include;..\libs\freealut-1.1.0-bin\include;..\libs\tinyxml-2.4.3;..\libs\libogg-1.1.3\include;..\libs\lua-5.1.4\include;..\libs\libvorbis-1.1.2\include;..\libs\zlib-1.2.3</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>xvpsdk.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+    <PostBuildEvent>
+      <Message>Copying shaders to XVP Designer system directory...</Message>
+      <Command>xcopy /Q /E /R /Y "$(ProjectDir)\system\shaders\hlsl\*" "$(ProjectDir)\exporters\XVPDesigner\XVPDesigner\bin\Debug\system\shaders\hlsl" &amp;
+xcopy /Q /E /R /Y "$(ProjectDir)\system\shaders\hlsl\*" "$(ProjectDir)\exporters\XVPDesigner\XVPDesigner\bin\Release\system\shaders\hlsl"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugSetup|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>inc\xsp\pc\audio;inc\xsp\pc\graphics;inc\xsp\pc\input;inc\xsp\pc\network;inc\xsp\pc\os;inc\core;..\OpenAL-1.1\include;..\freealut-1.1.0-bin\include;..\tinyxml-2.4.3;..\libogg-1.1.3\include;..\lua-5.0.2\include;..\libvorbis-1.1.2\include;..\zlib-1.2.3;C:\Program Files\AGEIA Technologies\SDK\v2.7.2\SDKs\Physics\include;C:\Program Files\AGEIA Technologies\SDK\v2.7.2\SDKs\Foundation\include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;XVP_DEBUG;PC_VERSION;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>xvpsdk.h</PrecompiledHeaderFile>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)-$(Platform)-d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\xsp\pc\graphics\XBaseGeometryShader.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XBaseIndexBuffer.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XBaseMovie.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XBasePixelShader.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XBaseTexture.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XBaseVertexShader.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XBlendState.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XConstantBuffer.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XDepthStencilState.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XDSMovie.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XGraphicsMgr.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XGraphicsMgrLuaGlue.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XHLSLGeometryShader.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XHLSLPixelShader.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XHLSLVertexShader.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XIndexBuffer.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XMaterial.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XRasterizerState.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XRenderContext.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XRenderTargetArray.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XSamplerState.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XTexture.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XVertexBuffer.cpp" />
+    <ClCompile Include="src\xsp\pc\graphics\XVertexDeclaration.cpp" />
+    <ClCompile Include="src\xsp\pc\network\XBaseTCPConnection.cpp" />
+    <ClCompile Include="src\xsp\pc\network\XBaseTCPListener.cpp" />
+    <ClCompile Include="src\xsp\pc\network\XBaseUDPConnection.cpp" />
+    <ClCompile Include="src\xsp\pc\network\XNetworkMgr.cpp" />
+    <ClCompile Include="src\xsp\pc\network\XNetworkMgrLuaGlue.cpp" />
+    <ClCompile Include="src\xsp\pc\network\XTCPConnection.cpp" />
+    <ClCompile Include="src\xsp\pc\network\XTCPListener.cpp" />
+    <ClCompile Include="src\xsp\pc\network\XUDPConnection.cpp" />
+    <ClCompile Include="src\xsp\pc\input\XInputMgr.cpp" />
+    <ClCompile Include="src\xsp\pc\input\XInputMgrLuaGlue.cpp" />
+    <ClCompile Include="src\xsp\pc\audio\XAudioMgr.cpp" />
+    <ClCompile Include="src\xsp\pc\audio\XAudioMgrLuaGlue.cpp" />
+    <ClCompile Include="src\xsp\pc\audio\XBaseSound.cpp" />
+    <ClCompile Include="src\xsp\pc\audio\XOggSound.cpp" />
+    <ClCompile Include="src\xsp\pc\audio\XOggStream.cpp" />
+    <ClCompile Include="src\xsp\pc\audio\XOggVorbisHelpers.cpp" />
+    <ClCompile Include="src\xsp\pc\audio\XWavSound.cpp" />
+    <ClCompile Include="src\xsp\pc\audio\XWavStream.cpp" />
+    <ClCompile Include="src\xsp\pc\os\XHeap.cpp" />
+    <ClCompile Include="src\xsp\pc\os\XHeapFactory.cpp" />
+    <ClCompile Include="src\xsp\pc\os\XNew.cpp" />
+    <ClCompile Include="src\xsp\pc\os\XOSMgr.cpp" />
+    <ClCompile Include="src\xsp\pc\os\XOSMgrLuaGlue.cpp" />
+    <ClCompile Include="src\core\XGeometry.cpp" />
+    <ClCompile Include="src\core\XModel.cpp" />
+    <ClCompile Include="src\core\XModelLoader.cpp" />
+    <ClCompile Include="src\core\XModelLODController.cpp" />
+    <ClCompile Include="src\core\XModelObject.cpp" />
+    <ClCompile Include="src\core\XModelObjectTemplate.cpp" />
+    <ClCompile Include="src\core\XModelTemplate.cpp" />
+    <ClCompile Include="src\core\XParentChildCombo.cpp" />
+    <ClCompile Include="src\core\XPose.cpp" />
+    <ClCompile Include="src\core\XSkinGeometry.cpp" />
+    <ClCompile Include="src\core\XSkinObject.cpp" />
+    <ClCompile Include="src\core\XSkinObjectTemplate.cpp" />
+    <ClCompile Include="src\core\XBone.cpp" />
+    <ClCompile Include="src\core\XSkinMesh.cpp" />
+    <ClCompile Include="src\core\XSkinMeshTemplate.cpp" />
+    <ClCompile Include="src\core\XParticle.cpp" />
+    <ClCompile Include="src\core\XParticleEmitter.cpp" />
+    <ClCompile Include="src\core\XParticleSystem.cpp" />
+    <ClCompile Include="src\core\XParticleSystemTemplate.cpp" />
+    <ClCompile Include="src\core\XAnimSprite.cpp" />
+    <ClCompile Include="src\core\XBaseSprite.cpp" />
+    <ClCompile Include="src\core\XSprite.cpp" />
+    <ClCompile Include="src\core\XTexSeqSprite.cpp" />
+    <ClCompile Include="src\core\XTextureSequence.cpp" />
+    <ClCompile Include="src\core\X2DMovie.cpp" />
+    <ClCompile Include="src\core\XCamera.cpp" />
+    <ClCompile Include="src\core\XCameraObject.cpp" />
+    <ClCompile Include="src\core\XMathUtils.cpp" />
+    <ClCompile Include="src\core\XMatrix3x3.cpp" />
+    <ClCompile Include="src\core\XMatrix4x4.cpp" />
+    <ClCompile Include="src\core\XQuaternion.cpp" />
+    <ClCompile Include="src\core\XRandomNumberLib.cpp" />
+    <ClCompile Include="src\core\XRay3D.cpp" />
+    <ClCompile Include="src\core\XVector2D.cpp" />
+    <ClCompile Include="src\core\XVector3D.cpp" />
+    <ClCompile Include="src\core\XVector4D.cpp" />
+    <ClCompile Include="src\core\XCursor.cpp" />
+    <ClCompile Include="src\core\XUI2DMovie.cpp" />
+    <ClCompile Include="src\core\XUIAnimSprite.cpp" />
+    <ClCompile Include="src\core\XUIButton.cpp" />
+    <ClCompile Include="src\core\XUIComboBox.cpp" />
+    <ClCompile Include="src\core\XUIElement.cpp" />
+    <ClCompile Include="src\core\XUIFrame.cpp" />
+    <ClCompile Include="src\core\XUIHorizontalScrollbar.cpp" />
+    <ClCompile Include="src\core\XUIHorizontalSlider.cpp" />
+    <ClCompile Include="src\core\XUIListBox.cpp" />
+    <ClCompile Include="src\core\XUIListView.cpp" />
+    <ClCompile Include="src\core\XUIProgressBar.cpp" />
+    <ClCompile Include="src\core\XUISpinner.cpp" />
+    <ClCompile Include="src\core\XUISprite.cpp" />
+    <ClCompile Include="src\core\XUITextbox.cpp" />
+    <ClCompile Include="src\core\XUIToggle.cpp" />
+    <ClCompile Include="src\core\XUIVerticalScrollbar.cpp" />
+    <ClCompile Include="src\core\XUIVerticalSlider.cpp" />
+    <ClCompile Include="src\core\XUserIntefaceLuaGlue.cpp" />
+    <ClCompile Include="src\core\XUserInterface.cpp" />
+    <ClCompile Include="src\core\XMatAnimController.cpp" />
+    <ClCompile Include="src\core\XMatAnimTrack.cpp" />
+    <ClCompile Include="src\core\XMaterialList.cpp" />
+    <ClCompile Include="src\core\XShaderMgr.cpp" />
+    <ClCompile Include="src\core\XGamePlayer.cpp" />
+    <ClCompile Include="src\core\XGameServer.cpp" />
+    <ClCompile Include="src\core\XNetAddress.cpp" />
+    <ClCompile Include="src\core\XPacketPool.cpp" />
+    <ClCompile Include="src\core\XTCPPacketizer.cpp" />
+    <ClCompile Include="src\core\XConsole.cpp" />
+    <ClCompile Include="src\core\XDebugUtilLib.cpp" />
+    <ClCompile Include="src\core\XGrid.cpp" />
+    <ClCompile Include="src\core\XMemoryPool.cpp" />
+    <ClCompile Include="src\core\XOctree.cpp" />
+    <ClCompile Include="src\core\XProfiler.cpp" />
+    <ClCompile Include="src\core\XProfilerIterator.cpp" />
+    <ClCompile Include="src\core\XProfilerNode.cpp" />
+    <ClCompile Include="src\core\XRsa.cpp" />
+    <ClCompile Include="src\core\XSmoothFilter.cpp" />
+    <ClCompile Include="src\core\XString.cpp" />
+    <ClCompile Include="src\core\XBoundingBox.cpp" />
+    <ClCompile Include="src\core\XIntersectLib.cpp" />
+    <ClCompile Include="src\core\XPlane.cpp" />
+    <ClCompile Include="src\core\XPolygon.cpp" />
+    <ClCompile Include="src\core\XRect.cpp" />
+    <ClCompile Include="src\core\XViewingFrustum.cpp" />
+    <ClCompile Include="src\core\XLight.cpp" />
+    <ClCompile Include="src\core\XLightMgr.cpp" />
+    <ClCompile Include="src\core\XLua.cpp" />
+    <ClCompile Include="src\core\XLuaScript.cpp" />
+    <ClCompile Include="src\core\XAnimController.cpp" />
+    <ClCompile Include="src\core\XAnimTrack.cpp" />
+    <ClCompile Include="src\core\XDistortionPostEffect.cpp" />
+    <ClCompile Include="src\core\XDOFPostEffect.cpp" />
+    <ClCompile Include="src\core\XEdgePostEffect.cpp" />
+    <ClCompile Include="src\core\XHDRPostEffect.cpp" />
+    <ClCompile Include="src\core\XMotionBlurPostEffect.cpp" />
+    <ClCompile Include="src\core\XPostEffect.cpp" />
+    <ClCompile Include="src\core\XActionMap.cpp" />
+    <ClCompile Include="src\core\XBitmap.cpp" />
+    <ClCompile Include="src\core\XBsp.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugEditor|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugPC|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugSetup|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='FinalPC|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseEditor|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleasePC|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\core\XCharSet.cpp" />
+    <ClCompile Include="src\core\XColor.cpp" />
+    <ClCompile Include="src\core\XInputActionMap.cpp" />
+    <ClCompile Include="src\core\XPropertyBag.cpp" />
+    <ClCompile Include="src\core\XResource.cpp" />
+    <ClCompile Include="src\core\XResourceList.cpp" />
+    <ClCompile Include="src\core\XScreenFader.cpp" />
+    <ClCompile Include="src\core\XSkyBox.cpp" />
+    <ClCompile Include="src\core\XState.cpp" />
+    <ClCompile Include="src\core\XTimer.cpp" />
+    <ClCompile Include="src\core\XVP.cpp" />
+    <ClCompile Include="src\core\XVPLuaGlue.cpp" />
+    <ClCompile Include="src\xvpsdk.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugEditor|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\core\XWad.cpp" />
+    <ClCompile Include="src\core\XDistortionSC.cpp" />
+    <ClCompile Include="src\core\XMaterialColorSC.cpp" />
+    <ClCompile Include="src\core\XModelBlinnPhongSC.cpp" />
+    <ClCompile Include="src\core\XModelNoLightSC.cpp" />
+    <ClCompile Include="src\core\XParticleSystemBlinnPhongSC.cpp" />
+    <ClCompile Include="src\core\XParticleSystemNoLightSC.cpp" />
+    <ClCompile Include="src\core\XShaderController.cpp" />
+    <ClCompile Include="src\core\XShadowCasterSSMSC.cpp" />
+    <ClCompile Include="src\core\XVertexColorSC.cpp" />
+    <ClCompile Include="src\core\XWhiteSC.cpp" />
+    <ClCompile Include="src\core\XActor.cpp" />
+    <ClCompile Include="src\core\XActorContainer.cpp" />
+    <ClCompile Include="src\core\XActorLuaGlue.cpp" />
+    <ClCompile Include="src\core\XStage.cpp" />
+    <ClCompile Include="src\core\XGizmo.cpp" />
+    <ClCompile Include="src\core\XGizmoController.cpp" />
+    <ClCompile Include="src\core\XGizmoMgr.cpp" />
+    <ClCompile Include="src\core\XGizmoMove.cpp" />
+    <ClCompile Include="src\core\XGizmoRotate.cpp" />
+    <ClCompile Include="src\core\XGizmoScale.cpp" />
+    <ClCompile Include="src\core\XScene.cpp" />
+    <ClCompile Include="src\core\XSceneGraph.cpp" />
+    <ClCompile Include="src\core\XSceneNode.cpp" />
+    <ClCompile Include="src\core\XChaseController.cpp" />
+    <ClCompile Include="src\core\XController.cpp" />
+    <ClCompile Include="src\core\XLookAtController.cpp" />
+    <ClCompile Include="src\core\XPhysicsController.cpp" />
+    <ClCompile Include="src\core\XPhysXController.cpp" />
+    <ClCompile Include="src\core\XPRZController.cpp" />
+    <ClCompile Include="src\core\XUFOController.cpp" />
+    <ClCompile Include="src\core\XViewBindController.cpp" />
+    <ClCompile Include="src\core\XDecalMgr.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\xsp\pc\graphics\XBaseGeometryShader.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XBaseIndexBuffer.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XBaseMovie.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XBasePixelShader.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XBaseTexture.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XBaseVertexShader.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XBlendState.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XConstantBuffer.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XDepthStencilState.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XDSMovie.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XGraphicsMgr.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XGraphicsMgrLuaGlue.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XGraphicsMgrTypes.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XHLSLGeometryShader.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XHLSLPixelShader.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XHLSLVertexShader.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XIndexBuffer.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XMaterial.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XRasterizerState.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XRenderContext.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XRenderTargetArray.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XSamplerState.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XTexture.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XVertexBuffer.h" />
+    <ClInclude Include="inc\xsp\pc\graphics\XVertexDeclaration.h" />
+    <ClInclude Include="inc\xsp\pc\network\XBaseTCPConnection.h" />
+    <ClInclude Include="inc\xsp\pc\network\XBaseTCPListener.h" />
+    <ClInclude Include="inc\xsp\pc\network\XBaseUDPConnection.h" />
+    <ClInclude Include="inc\xsp\pc\network\XNetworkMgr.h" />
+    <ClInclude Include="inc\xsp\pc\network\XNetworkMgrLuaGlue.h" />
+    <ClInclude Include="inc\xsp\pc\network\XTCPConnection.h" />
+    <ClInclude Include="inc\xsp\pc\network\XTCPListener.h" />
+    <ClInclude Include="inc\xsp\pc\network\XUDPConnection.h" />
+    <ClInclude Include="inc\xsp\pc\input\XInputMgr.h" />
+    <ClInclude Include="inc\xsp\pc\input\XInputMgrLuaGlue.h" />
+    <ClInclude Include="inc\xsp\pc\input\XInputMgrTypes.h" />
+    <ClInclude Include="inc\xsp\pc\audio\XAudioMgr.h" />
+    <ClInclude Include="inc\xsp\pc\audio\XAudioMgrLuaGlue.h" />
+    <ClInclude Include="inc\xsp\pc\audio\XBaseSound.h" />
+    <ClInclude Include="inc\xsp\pc\audio\XOggSound.h" />
+    <ClInclude Include="inc\xsp\pc\audio\XOggStream.h" />
+    <ClInclude Include="inc\xsp\pc\audio\XOggVorbisHelpers.h" />
+    <ClInclude Include="inc\xsp\pc\audio\XWavSound.h" />
+    <ClInclude Include="inc\xsp\pc\audio\XWavStream.h" />
+    <ClInclude Include="inc\xsp\pc\os\XHeap.h" />
+    <ClInclude Include="inc\xsp\pc\os\XHeapFactory.h" />
+    <ClInclude Include="inc\xsp\pc\os\XNew.h" />
+    <ClInclude Include="inc\xsp\pc\os\XOSMgr.h" />
+    <ClInclude Include="inc\xsp\pc\os\XOSMgrLuaGlue.h" />
+    <ClInclude Include="inc\xsp\pc\os\XOSMgrTypes.h" />
+    <ClInclude Include="inc\core\XGeometry.h" />
+    <ClInclude Include="inc\core\XModel.h" />
+    <ClInclude Include="inc\core\XModelLoader.h" />
+    <ClInclude Include="inc\core\XModelLODController.h" />
+    <ClInclude Include="inc\core\XModelObject.h" />
+    <ClInclude Include="inc\core\XModelObjectTemplate.h" />
+    <ClInclude Include="inc\core\XModelTemplate.h" />
+    <ClInclude Include="inc\core\XParentChildCombo.h" />
+    <ClInclude Include="inc\core\XPose.h" />
+    <ClInclude Include="inc\core\XSkinGeometry.h" />
+    <ClInclude Include="inc\core\XSkinObject.h" />
+    <ClInclude Include="inc\core\XSkinObjectTemplate.h" />
+    <ClInclude Include="inc\core\XBone.h" />
+    <ClInclude Include="inc\core\XSkinMesh.h" />
+    <ClInclude Include="inc\core\XSkinMeshTemplate.h" />
+    <ClInclude Include="inc\core\XParticle.h" />
+    <ClInclude Include="inc\core\XParticleEmitter.h" />
+    <ClInclude Include="inc\core\XParticleSystem.h" />
+    <ClInclude Include="inc\core\XParticleSystemTemplate.h" />
+    <ClInclude Include="inc\core\XAnimSprite.h" />
+    <ClInclude Include="inc\core\XAnimSpriteDesc.h" />
+    <ClInclude Include="inc\core\XBaseSprite.h" />
+    <ClInclude Include="inc\core\XSprite.h" />
+    <ClInclude Include="inc\core\XTexSeqSprite.h" />
+    <ClInclude Include="inc\core\XTextureSequence.h" />
+    <ClInclude Include="inc\core\X2DMovie.h" />
+    <ClInclude Include="inc\core\XCamera.h" />
+    <ClInclude Include="inc\core\XCameraObject.h" />
+    <ClInclude Include="inc\core\XMathUtils.h" />
+    <ClInclude Include="inc\core\XMatrix3x3.h" />
+    <ClInclude Include="inc\core\XMatrix4x4.h" />
+    <ClInclude Include="inc\core\XQuaternion.h" />
+    <ClInclude Include="inc\core\XRandomNumberLib.h" />
+    <ClInclude Include="inc\core\XRay3D.h" />
+    <ClInclude Include="inc\core\XVector2D.h" />
+    <ClInclude Include="inc\core\XVector3D.h" />
+    <ClInclude Include="inc\core\XVector4D.h" />
+    <ClInclude Include="inc\core\XCursor.h" />
+    <ClInclude Include="inc\core\XTextBoxDesc.h" />
+    <ClInclude Include="inc\core\XUI2DMovie.h" />
+    <ClInclude Include="inc\core\XUIAnimSprite.h" />
+    <ClInclude Include="inc\core\XUIButton.h" />
+    <ClInclude Include="inc\core\XUIComboBox.h" />
+    <ClInclude Include="inc\core\XUIElement.h" />
+    <ClInclude Include="inc\core\XUIFrame.h" />
+    <ClInclude Include="inc\core\XUIHorizontalScrollbar.h" />
+    <ClInclude Include="inc\core\XUIHorizontalSlider.h" />
+    <ClInclude Include="inc\core\XUIListBox.h" />
+    <ClInclude Include="inc\core\XUIListView.h" />
+    <ClInclude Include="inc\core\XUIProgressBar.h" />
+    <ClInclude Include="inc\core\XUISpinner.h" />
+    <ClInclude Include="inc\core\XUISprite.h" />
+    <ClInclude Include="inc\core\XUITextbox.h" />
+    <ClInclude Include="inc\core\XUIToggle.h" />
+    <ClInclude Include="inc\core\XUIVerticalScrollbar.h" />
+    <ClInclude Include="inc\core\XUIVerticalSlider.h" />
+    <ClInclude Include="inc\core\XUserInterface.h" />
+    <ClInclude Include="inc\core\XUserInterfaceLuaGlue.h" />
+    <ClInclude Include="inc\core\XMatAnimController.h" />
+    <ClInclude Include="inc\core\XMatAnimTrack.h" />
+    <ClInclude Include="inc\core\XMaterialList.h" />
+    <ClInclude Include="inc\core\XShaderMgr.h" />
+    <ClInclude Include="inc\core\XGamePlayer.h" />
+    <ClInclude Include="inc\core\XGamePlayerDesc.h" />
+    <ClInclude Include="inc\core\XGameServer.h" />
+    <ClInclude Include="inc\core\XGameServerDesc.h" />
+    <ClInclude Include="inc\core\XNetAddress.h" />
+    <ClInclude Include="inc\core\XNetGlobals.h" />
+    <ClInclude Include="inc\core\XNetHost.h" />
+    <ClInclude Include="inc\core\XPacketPool.h" />
+    <ClInclude Include="inc\core\XTCPPacketizer.h" />
+    <ClInclude Include="inc\core\CImg.h" />
+    <ClInclude Include="inc\core\XConsole.h" />
+    <ClInclude Include="inc\core\XDebugUtilLib.h" />
+    <ClInclude Include="inc\core\XFreeArray.h" />
+    <ClInclude Include="inc\core\XFreeList.h" />
+    <ClInclude Include="inc\core\XGrid.h" />
+    <ClInclude Include="inc\core\XMemBlockArray.h" />
+    <ClInclude Include="inc\core\XMemBlockList.h" />
+    <ClInclude Include="inc\core\XMemoryPool.h" />
+    <ClInclude Include="inc\core\XOctree.h" />
+    <ClInclude Include="inc\core\XProfiler.h" />
+    <ClInclude Include="inc\core\XProfilerIterator.h" />
+    <ClInclude Include="inc\core\XProfilerNode.h" />
+    <ClInclude Include="inc\core\XRsa.h" />
+    <ClInclude Include="inc\core\XSmoothFilter.h" />
+    <ClInclude Include="inc\core\XString.h" />
+    <ClInclude Include="inc\core\XStringMap.h" />
+    <ClInclude Include="inc\core\XBoundingBox.h" />
+    <ClInclude Include="inc\core\XIntersectLib.h" />
+    <ClInclude Include="inc\core\XPlane.h" />
+    <ClInclude Include="inc\core\XPolygon.h" />
+    <ClInclude Include="inc\core\XRect.h" />
+    <ClInclude Include="inc\core\XViewingFrustum.h" />
+    <ClInclude Include="inc\core\XLight.h" />
+    <ClInclude Include="inc\core\XLightDesc.h" />
+    <ClInclude Include="inc\core\XLightMgr.h" />
+    <ClInclude Include="inc\core\XLua.h" />
+    <ClInclude Include="inc\core\XLuaScript.h" />
+    <ClInclude Include="inc\core\XAnimController.h" />
+    <ClInclude Include="inc\core\XAnimTimeEvent.h" />
+    <ClInclude Include="inc\core\XAnimTrack.h" />
+    <ClInclude Include="inc\core\XAnimTrackInfo.h" />
+    <ClInclude Include="inc\core\XDistortionPostEffect.h" />
+    <ClInclude Include="inc\core\XDOFPostEffect.h" />
+    <ClInclude Include="inc\core\XEdgePostEffect.h" />
+    <ClInclude Include="inc\core\XHDRPostEffect.h" />
+    <ClInclude Include="inc\core\XMotionBlurPostEffect.h" />
+    <ClInclude Include="inc\core\XPostEffect.h" />
+    <ClInclude Include="inc\core\XActionMap.h" />
+    <ClInclude Include="inc\core\XBitmap.h" />
+    <CustomBuild Include="inc\core\XBsp.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugEditor|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugPC|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugSetup|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='FinalPC|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseEditor|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleasePC|x64'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <ClInclude Include="inc\core\XBSStream.h" />
+    <ClInclude Include="inc\core\XCharSet.h" />
+    <ClInclude Include="inc\core\XColor.h" />
+    <ClInclude Include="inc\core\XInputActionMap.h" />
+    <ClInclude Include="inc\core\XMacroRepeat.h" />
+    <ClInclude Include="inc\core\XObjectFactory.h" />
+    <ClInclude Include="inc\core\XPropertyBag.h" />
+    <ClInclude Include="inc\core\XResource.h" />
+    <ClInclude Include="inc\core\XResourceList.h" />
+    <ClInclude Include="inc\core\XScreenFader.h" />
+    <ClInclude Include="inc\core\XSkyBox.h" />
+    <ClInclude Include="inc\core\XState.h" />
+    <ClInclude Include="inc\core\XTimer.h" />
+    <ClInclude Include="inc\core\XVP.h" />
+    <ClInclude Include="inc\core\XVPDesc.h" />
+    <ClInclude Include="inc\core\XVPLuaGlue.h" />
+    <ClInclude Include="inc\core\xvpsdk.h" />
+    <ClInclude Include="inc\core\XWad.h" />
+    <ClInclude Include="inc\core\XDistortionSC.h" />
+    <ClInclude Include="inc\core\XMaterialColorSC.h" />
+    <ClInclude Include="inc\core\XModelBlinnPhongSC.h" />
+    <ClInclude Include="inc\core\XModelNoLightSC.h" />
+    <ClInclude Include="inc\core\XParticleSystemBlinnPhongSC.h" />
+    <ClInclude Include="inc\core\XParticleSystemNoLightSC.h" />
+    <ClInclude Include="inc\core\XShaderController.h" />
+    <ClInclude Include="inc\core\XShadowCasterSSMSC.h" />
+    <ClInclude Include="inc\core\XVertexColorSC.h" />
+    <ClInclude Include="inc\core\XWhiteSC.h" />
+    <ClInclude Include="inc\core\XActor.h" />
+    <ClInclude Include="inc\core\XActorContainer.h" />
+    <ClInclude Include="inc\core\XActorLuaGlue.h" />
+    <ClInclude Include="inc\core\XStage.h" />
+    <ClInclude Include="inc\core\XGizmo.h" />
+    <ClInclude Include="inc\core\XGizmoController.h" />
+    <ClInclude Include="inc\core\XGizmoMgr.h" />
+    <ClInclude Include="inc\core\XGizmoMove.h" />
+    <ClInclude Include="inc\core\XGizmoRotate.h" />
+    <ClInclude Include="inc\core\XGizmoScale.h" />
+    <ClInclude Include="inc\core\XScene.h" />
+    <ClInclude Include="inc\core\XSceneGraph.h" />
+    <ClInclude Include="inc\core\XSceneNode.h" />
+    <ClInclude Include="inc\core\XChaseController.h" />
+    <ClInclude Include="inc\core\XController.h" />
+    <ClInclude Include="inc\core\XLookAtController.h" />
+    <ClInclude Include="inc\core\XPhysicsController.h" />
+    <ClInclude Include="inc\core\XPhysXController.h" />
+    <ClInclude Include="inc\core\XPRZController.h" />
+    <ClInclude Include="inc\core\XUFOController.h" />
+    <ClInclude Include="inc\core\XViewBindController.h" />
+    <ClInclude Include="inc\core\XDecalMgr.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="XVPResources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="XVPShaders\XVPShaders.vcxproj">
+      <Project>{4169d97e-c049-4639-a161-897427ea6952}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,791 @@
+<html>
+	<head>
+		<title>The X</title>
+		<meta http-equiv="Content-Language" content="en-us">
+		<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+		<meta name="ProgId" content="FrontPage.Editor.Document">
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	</head>
+	<body bgcolor="#000000" text="#ffffff">
+		<p>&nbsp;</p>
+		<p><b><font size="4" face="Verdana">The X-VP Tutorials Explained</font></b></p>
+		<p><font face="Verdana" size="2">The tutorials included with the X-VP SDK are meant for 
+				demonstration purposes only.&nbsp; The main goal of each one is to showcase a 
+				specific concept or technique in the SDK.&nbsp; Therefore, to keep things 
+				simple and straightforward, each tutorial only includes the code necessary to 
+				demonstrate the subject at hand.&nbsp; There are many optimizations that can be 
+				made to the tutorial source code.&nbsp; Also, the practices used by the 
+				tutorials aren't the only way to do things with X-VP.&nbsp; They are good 
+				starting examples, though.&nbsp; Feel free to experiment.</font></p>
+		<p><font face="Verdana" size="2">If applicable a screenshot will be included in each 
+				description.&nbsp; That being said, the absolute best place to look to fully 
+				understand each tutorial is of course, the source code.&nbsp; The source code 
+				has been littered with tons of comments explaining what each section of code is 
+				doing.&nbsp; In fact, the majority of the tutorial exists in the comments 
+				inside the source code. </font>
+		</p>
+		<p><font face="Verdana" size="2">The recommended approach to working the tutorials is 
+				to start from the beginning as later tutorials may use concepts presented in 
+				earlier tutorials.&nbsp; The tutorials are structured in an outline format so </font>
+			<font face="Verdana" size="2">that related subject matter can be grouped 
+				together.&nbsp; So, if you follow them in order, concepts will progress from 
+				beginner to intermediate to advanced.&nbsp; </font>
+		</p>
+		<p><font face="Verdana" size="2">Keep in mind that the tutorials don't cover every 
+				aspect of every subject presented.&nbsp; For example, there may be a tutorial 
+				on lighting and although the tutorial focuses on point lights, it might not 
+				cover other types of lights that X-VP supports like spot or directional 
+				lights.&nbsp; See the X-VP API Reference and other documentation to dig deeper.</font></p>
+		<p><font face="Verdana" size="2">The art used in the tutorials can be found in the 
+				common directory underneath the tutorials directory.&nbsp; This includes both 
+				the exported files and the original 3D Studio Max files.</font></p>
+		<p>&nbsp;</p>
+		<p><b><font size="4" face="Verdana">Section 1 - Rendering Fundamentals</font></b></p>
+		<p><font face="Verdana" size="2">This is where it all begins.&nbsp; This section 
+				presents very basic rendering examples in X-VP as well as other general 
+				concepts.</font></p>
+		<p>&nbsp;</p>
+		<table border="1" cellpadding="5" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#ffffff"
+			width="100%" id="AutoNumber7">
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="1.1.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b><br>
+								1.1</b></font></p>
+					<p><font face="Verdana" size="2">This extremely simple tutorial shows an example of 
+							using X-VP in a Windows application.&nbsp; There are no models or fancy special 
+							effects, just an example of how to interface with X-VP inside of standard 
+							Windows functions like WinMain() and WndProc().&nbsp; It repeatedly clears the 
+							color buffer to red just to let you know that it’s working.&nbsp; This tutorial 
+							demonstrates engine initialization, engine shutdown and other common X-VP 
+							runtime practices.</font></p>
+					<p class="MsoNormal">&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="1.2.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>1.2</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial creates a simple triangle in front of 
+							the camera.&nbsp;&nbsp; Each triangle vertex is assigned a different diffuse 
+							color.&nbsp; This tutorial demonstrates vertex buffer usage, index buffer 
+							usage, material usage and simple rendering techniques.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="1.3.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>1.3</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial shows how to texture a polygon.&nbsp; It 
+							uses the triangle created in 1.2 and applies a simple 2D texture map.&nbsp; 
+							This tutorial demonstrates texture management and application to geometry from 
+							within X-VP.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="1.4.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>1.4</b></font></p>
+					<p><font face="Verdana" size="2">Up until now, rendering has been somewhat 
+							tedious.&nbsp; That is, each render setting has been explicitly set by the 
+							application before each render call.&nbsp; In this tutorial, we introduce 
+							render states and show how they simplify and optimize the rendering of objects 
+							be maintaining a snapshot of render settings for a graphics device.&nbsp; </font>
+					</p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="1.5.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>1.5</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial explains how to use fixed-function 
+							lighting techniques in X-VP by showing an example of a point light applied to 
+							our triangle from previous tutorials.&nbsp; The point light is animated to 
+							slowly fade in and out.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="1.6.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>1.6</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial introduces the sprite framework in 
+							X-VP.&nbsp; It simply creates 50 sprites and randomly positions them on the 
+							screen.&nbsp; </font>
+					</p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="1.7.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>1.7</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial introduces animated sprites and how to 
+							configure them.&nbsp; They fit into the sprite framework the same way as all 
+							other sprites.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="1.8.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>1.8</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial demonstrates how to playback 
+							movies.&nbsp; Movies are also considered to be sprites by X-VP.&nbsp; They can 
+							be added and removed from the scene like any other sprite.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="1.9.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>1.9</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial shows the screen fading capabilities of 
+							X-VP via the gamma controls of the monitor.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="1.10.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b><br>
+								1.10</b></font></p>
+					<p><font face="Verdana" size="2">From here on out things begin to get more interesting. 
+							In previous tutorials, our X-VP application has only had one state.&nbsp; We 
+							did this to keep things clear and simple.&nbsp; Most X-VP applications; 
+							however, will consist of more than one state.&nbsp; Typically, the larger the 
+							application is, the more states it will have.&nbsp; Of course the number of 
+							states and how they interact is completely up to the developer.&nbsp; This 
+							tutorial creates several states to simulate a game framework including an intro 
+							movie state, load game state, options state and of course the main game play 
+							state.&nbsp; It illustrates how to navigate between states with X-VP.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p><b><font size="4" face="Verdana">Section 2 - Introduction to Scene Nodes, Controllers 
+					and the Scene Graph</font></b></p>
+		<p><font face="Verdana" size="2">In section 1&nbsp; we didn’t even mention the topic of 
+				Scene Nodes and Controllers.&nbsp; We did this on purpose so that earlier 
+				tutorials could be kept extremely simple.&nbsp; In section 2 and on, we will be 
+				making heavy use of Scene Nodes and Controllers – and for good reason.&nbsp; 
+				They are the workhorses of X-VP.&nbsp; X-VP’s flexibility and power are heavily 
+				dependent upon the concepts introduced in section 2.&nbsp; </font>
+		</p>
+		<p>&nbsp;</p>
+		<table border="1" cellpadding="5" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#ffffff"
+			width="100%" id="AutoNumber1">
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="2.1.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b><br>
+								2.1</b></font></p>
+					<p><font face="Verdana" size="2">In this tutorial, we create our first Scene 
+							Node.&nbsp; We’ll use our familiar triangle from previous tutorials and convert 
+							it into a Scene Node that X-VP can understand.&nbsp; Once we’ve turned it into 
+							a Scene Node, we’ll add 50 of them to the X-VP's Scene Graph just for 
+							demonstration.</font></p>
+					<p class="MsoNormal">&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="2.2.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b><br>
+								2.2</b></font></p>
+					<p><font face="Verdana" size="2">In 2.1, we created our first Scene Node.&nbsp; So, in 
+							this tutorial, we’re going to create our first Update Controller.&nbsp; We’ll 
+							create a Controller whose sole purpose is to spin geometry around its local Y 
+							axis.&nbsp; (We’ll call it the Spin Controller)&nbsp; We’ll then attach Spin 
+							Controllers to the triangle Scene Nodes we created in 2.1.&nbsp; This will 
+							cause the 50 triangles to spin around their local Y axis when added to X-VP's 
+							Scene Graph.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="2.3.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b><br>
+								2.3</b></font></p>
+					<p><font face="Verdana" size="2">In this tutorial we create our first Render 
+							Controller.&nbsp; To keep things fairly simple, we implement a Render 
+							Controller that toggles the fill mode of the geometry it’s attached to between 
+							wire and solid modes.&nbsp; We attach our new Render Controller to the triangle 
+							Scene Nodes from before along with the Spin Controller from 2.2.&nbsp; The end 
+							result is 50 spinning triangles who are toggling there fill mode between wire 
+							and solid modes.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p><b><font size="4" face="Verdana">Section 3 - Models, Skin Meshes, and Other X-VP Objects</font></b></p>
+		<p><font face="Verdana" size="2">X-VP ships with several pre-built Scene Nodes and 
+				Controllers.&nbsp; Section 3 is dedicated to these.&nbsp; </font>
+		</p>
+		<p>&nbsp;</p>
+		<table border="1" cellpadding="5" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#ffffff"
+			width="100%" id="AutoNumber1" height="1676">
+			<tr>
+				<td width="18%" height="150">
+					<font face="Verdana"><img border="0" src="3.1.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="150">
+					<p class="MsoNormal"><font face="Verdana"><b>3.1</b></font></p>
+					<p><font face="Verdana" size="2">In this tutorial, we demonstrate how to load and add 
+							models to X-VP’s Scene Graph.&nbsp; Several example models are included in the 
+							tutorial distribution.</font></p>
+					<p class="MsoNormal">&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="222">
+					<font face="Verdana"><img border="0" src="3.1.1.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="222">
+					<p class="MsoNormal"><font face="Verdana"><b><br>
+								3.1.1</b></font></p>
+					<p><font face="Verdana" size="2">Using the 4 models from the previous tutorial, this 
+							tutorial, shows how to animate objects within each model (as well as the model 
+							as a whole) by attaching controllers to individual objects.&nbsp; It attaches a 
+							controller that is capable of moving objects within their own object space.</font></p>
+					<p><font face="Verdana" size="2">For example, the helicopter models will have these 
+							controllers attached to their rotor objects so they can spin.&nbsp; The plane 
+							and tank models will have controllers attached to various objects like 
+							propellers, turrets, etc.&nbsp; </font>
+					</p>
+					<p><font face="Verdana" size="2">Also, these controllers are attached to the model 
+							space of each model so that each they can be rotated as a whole in their 
+							respective model space.&nbsp; This makes it easier to view each model from all 
+							angles.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="95">
+					<font face="Verdana"><img border="0" src="3.1.2.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="95">
+					<p class="MsoNormal"><font face="Verdana"><b>3.1.2</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial uses the Animation Controller to animate 
+							3 plane models with a flight animation.&nbsp;</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="133">
+					<font face="Verdana"><img border="0" src="3.1.3.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="133">
+					<p class="MsoNormal"><font face="Verdana"><b><br>
+								3.1.3</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial demonstrates how to attach other Scene 
+							Nodes to a model and let the X-VP Scene Graph automatically calculate their 
+							positions and orientations as the model moves.&nbsp; It uses the 3 plane models 
+							from 3.1.2 and attaches a particle system to each engine of each plane as they 
+							run through the flight animation..</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="114">
+					<img border="0" src="3.1.4.jpg" width="200" height="150"></td>
+				<td width="82%" height="114">
+					<p class="MsoNormal"><font face="Verdana"><b><br>
+								3.1.4</b></font></p>
+					<p><font face="Verdana,Helvetica" size="2">This tutorial demonstrates how to use the 
+							LOD system in X-VP.&nbsp; An artist has generated 4 LODs for a model.&nbsp; The 
+							model consists of 5 objects, a box and 4 spheres, however LOD levels have only 
+							been generated for the box and 2 of the spheres.&nbsp; X-VP will automatically 
+							search for LODs and attach them to the appropriate base geometry.</font></p>
+					<p>
+						<font face="Verdana,Helvetica" size="2">Models can have any or all of their objects 
+							LODed and the level depths are allowed to vary independent of one 
+							another.&nbsp; Once the LOD data is loaded and stored, the behavior of the 
+							LODing system is controlled by the LOD controller which includes a default 
+							algorithm using camera distance and FOV.&nbsp; This can easily be changed in a 
+							number of ways.</font></p>
+					<p><font face="Verdana,Helvetica" size="2">LOD data is efficiently stored in the model 
+							template and shared among all instances of that model.&nbsp; The LOD Controller 
+							can control any number of model instances.&nbsp; </font>
+					</p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="114">
+					<img border="0" src="3.1.5.jpg" width="200" height="150"></td>
+				<td width="82%" height="114">
+					<p class="MsoNormal"><br>
+						<font face="Verdana"><b>3.1.5</b></font></p>
+					<p><font face="Verdana,Helvetica" size="2">This tutorial demonstrates the Material 
+							Animation Controller.&nbsp; Keyframes have been recorded of U and V offsets as 
+							well as W rotation.&nbsp; A material animation controller is simply attached to 
+							a model and used to play the material animation track.</font></p>
+					<p><font face="Verdana,Helvetica" size="2">The Material Animation Controller has the 
+							same feature set as the Animation Controller.&nbsp; It can blend between 
+							multiple tracks and control animation track properties like speed, weight, etc.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="114">
+					<font face="Verdana"><img border="0" src="3.2.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="114">
+					<p class="MsoNormal"><font face="Verdana"><b>3.2</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial introduces the Skin Mesh Scene Node in 
+							X-VP.&nbsp; It loads an included skin mesh and adds it to the Scene Graph.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="114">
+					<font face="Verdana"><img border="0" src="3.2.1.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="114">
+					<p class="MsoNormal"><font face="Verdana"><b>3.2.1</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial shows how to use the Animation 
+							Controller to play an animation track on a Skin Mesh.&nbsp; It uses the 
+							character from the previous tutorial and plays a walking animation track on the 
+							Skin Mesh.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="190">
+					<font face="Verdana"><img border="0" src="3.2.2.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="190">
+					<p class="MsoNormal"><font face="Verdana"><b><br>
+								3.2.2</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial shows how the Animation Controller can 
+							blend between multiple animation tracks by weighting individual tracks.&nbsp; 
+							It applies 2 tracks to the skin mesh from previous tutorials and lets you blend 
+							between them using the cursor keys.</font></p>
+					<p><font face="Verdana" size="2">One animation track is an idle animation as if the 
+							character is standing still holding a gun (even though there is no gun 
+							attached) and bouncing slightly.&nbsp; The other animation is a full walk 
+							cycle.&nbsp; The up and down cursor keys can be used to blend slowly between 
+							the animations.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="171">
+					<font face="Verdana"><img border="0" src="3.2.3.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="171">
+					<p class="MsoNormal"><font face="Verdana"><b><br>
+								3.2.3</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial shows how to use a Physics Controller to 
+							move the Skin Mesh around in world space.&nbsp; It uses the character from 
+							previous tutorials.&nbsp; The Skin Mesh’s model space is moved around while 
+							playing the walk animation via the Animation Controller to show how to create a 
+							realistic walking motion.</font></p>
+					<p><font face="Verdana" size="2">You can move the character and make him walk by using 
+							the cursor keys.<br>
+							&nbsp;</font></p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="133">
+					<font face="Verdana"><img border="0" src="3.2.4.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="133">
+					<p class="MsoNormal"><font face="Verdana"><b><br>
+								3.2.4</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial shows how to dynamically attach Scene 
+							Nodes to others.&nbsp; Specifically, it attaches a gun model to the hands of 
+							the Skin Mesh character from previous tutorials.&nbsp; The gun model can be 
+							moved between the left and right hands of the character by using the left and 
+							right cursor keys.&nbsp; As the walking animation plays, the gun is 
+							automatically moved appropriately.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="114">
+					<font face="Verdana"><img border="0" src="3.2.4.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="114">
+					<p class="MsoNormal"><font face="Verdana"><b><br>
+								3.2.5</b></font></p>
+					<p><font face="Verdana" size="2">You can register user events to trigger at specific 
+							times while an animation controller is playing its tracks.&nbsp; In this 
+							tutorial, we register 2 events to trigger during the walk animation loop.&nbsp; 
+							One event triggers when his left foot hits the ground and the other when his 
+							right foot hits the ground.&nbsp; The events are used to play footstep 
+							sounds.&nbsp; </font>
+					</p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="114">
+					<font face="Verdana"><img border="0" src="3.3.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="114">
+					<p class="MsoNormal"><font face="Verdana"><b>3.3</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial shows how to load and render one of the 
+							included particle systems in the tutorial distribution.&nbsp; It simply loads 
+							in the particle system and adds it to X-VP’s Scene Graph.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="114">
+					<font face="Verdana"><img border="0" src="3.3.1.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="114">
+					<p class="MsoNormal"><font face="Verdana"><b>3.3.1</b></font></p>
+					<p><font face="Verdana" size="2">Using the particle system from the last tutorial, this 
+							tutorial attaches an Animation Controller to the particle system and plays an 
+							animation track to cause the particle system to buzz around on the screen.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="57">
+					<font face="Verdana"><img border="0" src="3.3.2.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="57">
+					<font face="Verdana"><b>3.3.2</b></font><p><font face="Verdana" size="2">In this 
+							tutorial, a particle system with a cylindrical emitter is spun via the Physics 
+							Controller.</font></p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="57">
+					<font face="Verdana"><img border="0" src="3.4.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="57">
+					<p class="MsoNormal"><font face="Verdana"><b>3.4</b></font></p>
+					<p><font face="Verdana" size="2">Most tutorials so far have used the same camera file 
+							for the main camera.&nbsp; It was aligned at the world origin and exported from 
+							3D Studio Max.&nbsp; In this tutorial, we load in 4 new cameras which have been 
+							positioned around a tank model.&nbsp; By pressing the cursor keys you can 
+							switch between the 4 cameras.&nbsp;&nbsp;
+							<br>
+							&nbsp;</font></p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="57">
+					<font face="Verdana"><img border="0" src="3.4.1.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="57">
+					<p class="MsoNormal"><font face="Verdana"><b>3.4.1</b></font></p>
+					<p><font face="Verdana" size="2">In this tutorial, we attach an animation controller to 
+							a camera.&nbsp; The camera flies around the cave via the controller. </font>
+					</p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" height="57">
+					<font face="Verdana"><img border="0" src="3.4.2.jpg" width="200" height="150"></font></td>
+				<td width="82%" height="57">
+					<font face="Verdana"><b>3.4.1</b></font><p><font face="Verdana" size="2">In this 
+							tutorial we attach&nbsp; a Physics Controller to the camera.&nbsp; You can use 
+							the cursor keys to move and turn the camera.</font></p>
+				</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p><b><font size="4" face="Verdana">Section 4 - Vertex and Pixel Shaders</font></b></p>
+		<p><font face="Verdana" size="2">While X-VP can use existing fixed function pipeline 
+				methods, it can also easily support the programmable pipeline via vertex and 
+				pixel shaders written in various languages.&nbsp; The Controller Framework is 
+				meant to handle vertex and pixel shaders and there relationship with scene 
+				objects.&nbsp;&nbsp; This section focuses on integrating shaders within X-VP.</font></p>
+		<p>&nbsp;</p>
+		<table border="1" cellpadding="5" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#ffffff"
+			width="100%" id="AutoNumber1">
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="4.1.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>4.1</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial demonstrates how to write vertex/pixel 
+							shaders within X-VP’s Node/Controller Framework by implementing a simple 
+							per-vertex lighting render controller.&nbsp; The render controller is attached 
+							to models, which causes their geometry to be affected by the shader.</font></p>
+					<p class="MsoNormal">&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="4.2.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>4.2</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial demonstrates how to write vertex/pixel 
+							shaders within X-VP’s Node/Controller Framework by implementing a cubic 
+							environment mapping render controller.&nbsp; The render controller is attached 
+							to models, which causes their geometry to be affected by the shader.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="4.3.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>4.3</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial demonstrates how to write vertex/pixel 
+							shaders within X-VP’s Node/Controller Framework by implementing a cel shading 
+							render controller.&nbsp; The render controller is attached to models, which 
+							causes their geometry to be affected by the shader.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="4.4.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>4.4</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial demonstrates how to write vertex/pixel 
+							shaders within X-VP’s Node/Controller Framework by implementing a per-pixel 
+							lighting render controller.&nbsp; The render controller is attached to models, 
+							which causes their geometry to be affected by the shader.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p><b><font size="4" face="Verdana">Section 5 - The User Interface Framework</font></b></p>
+		<p><font face="Verdana" size="2">X-VP contains an entire framework dedicated to 
+				presenting 2D/3D user interfaces and handling user activity.&nbsp; Section 5 
+				works through several examples that describe how to use the framework.</font></p>
+		<p>&nbsp;</p>
+		<table border="1" cellpadding="5" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#ffffff"
+			width="100%" id="AutoNumber1">
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="5.1.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b><br>
+								5.1</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial lumps together various examples of the 
+							user interface elements that an X-VP User Interface can contain including push 
+							buttons, list views, list boxes, combo boxes, spinners, scroll 
+							bars,&nbsp;progress bars, toggle buttons, sliders, sprites, animated sprites, 
+							movies, cursors, text boxes, tooltips,&nbsp;etc...&nbsp; The user interface 
+							elements are 100% graphically customizable.&nbsp; You can also customize sounds 
+							played for different events such as "button down", "button up" or "button 
+							over".&nbsp; </font>
+					</p>
+					<p><font face="Verdana" size="2">Once you define a user interface layout in screen 
+							coordinates, X-VP automatically takes care of other resolutions and scales 
+							controls automatically.&nbsp; This means you define everything once and X-VP 
+							handles all other display modes.</font></p>
+					<p><font face="Verdana" size="2"> This UI layout as well as the event hooks are 
+							specified by a lua script.&nbsp; UI controls are described by small, 
+							lightweight XML descriptions that define their look and feel.</font></p>
+					<p class="MsoNormal">&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="5.2.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>5.2</b></font></p>
+					<p><font face="Verdana" size="2">In this tutorial, we integrate a 2D interface with a 
+							3D scene.&nbsp; We build a user interface that contains two text boxes.&nbsp; 
+							The text boxes will obtain the focus when clicked and allow you to enter 
+							data.&nbsp; The data entered affects the rotor speeds of the Apache 
+							Helicopter.&nbsp; </font>
+					</p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+		</table>
+		<p><font face="Verdana">&nbsp; </font>
+		</p>
+		<p>&nbsp;</p>
+		<p><b><font size="4" face="Verdana">Section 6 - Playing Audio</font></b></p>
+		<p><font face="Verdana" size="2">X-VP has a wide range of audio playback 
+				capabilities.&nbsp; This section describes those capabilities.</font></p>
+		<p>&nbsp;</p>
+		<table border="1" cellpadding="5" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#ffffff"
+			width="100%" id="AutoNumber2">
+			<tr>
+				<td width="18%" align="center"><font face="Verdana">NO PICTURE</font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>6.1</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial demonstrates how to create and play 
+							sound files.&nbsp; By pressing the number keys 1-5 you can play various sound 
+							and music files.&nbsp; </font>
+					</p>
+					<p class="MsoNormal">&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" align="center"><font face="Verdana">NO PICTURE</font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>6.2</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial shows how to modify properties of a 
+							sound such as volume, pitch and looping state.&nbsp; By pressing certain keys 
+							you can toggle different settings for each sound.&nbsp; See the code for which 
+							keys to press.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%" align="center"><font face="Verdana">NO PICTURE</font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>6.3</b></font></p>
+					<p><font face="Verdana" size="2">This tutorial demonstrates how to use 3D sound with 
+							X-VP and adjust its properties.&nbsp; It plays a sound clip and moves it around 
+							the listener in a circle.&nbsp; </font>
+					</p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p><b><font size="4" face="Verdana">Section 7 - Input Devices</font></b></p>
+		<p><font face="Verdana" size="2">X-VP supports many types of devices for gathering user 
+				input including keyboards, mice, joysticks and gamepads, etc.&nbsp; This 
+				section is devoted to explaining input devices within X-VP.</font></p>
+		<p>&nbsp;</p>
+		<table border="1" cellpadding="5" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#ffffff"
+			width="100%" id="AutoNumber3">
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="7.1.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>7.1</b></font></p>
+					<p class="MsoNormal"><font face="Verdana" size="2">This tutorial demonstrates various 
+							keyboard functions.&nbsp; It places a sprite on the screen and allows you to 
+							control it with the cursor keys.</font></p>
+					<p class="MsoNormal">&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="7.2.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>7.2</b></font></p>
+					<p class="MsoNormal"><font face="Verdana" size="2">This tutorial demonstrates various 
+							mouse functions.&nbsp; It places a sprite on the screen and allows you to 
+							control it with mouse movement, buttons and wheel.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="7.3.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>7.3</b></font></p>
+					<p class="MsoNormal"><font face="Verdana" size="2">This tutorial demonstrates various 
+							joystick/gamepad functions.&nbsp; It places two sprites on the screen and 
+							allows you to control them via analog sticks present on the gamepad.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="7.2.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					&nbsp;</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p><b><font size="4" face="Verdana">Section 8 - Networking</font></b></p>
+		<p><font face="Verdana" size="2">X-VP ships with support for UDP and TCP networking as 
+				well as a pre-built client/server network model/framework.&nbsp; This section 
+				discusses various networking components within X-VP.</font></p>
+		<p>&nbsp;</p>
+		<table border="1" cellpadding="5" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#ffffff"
+			width="100%" id="AutoNumber4">
+			<tr>
+				<td width="18%">&nbsp;</td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>8.1</b></font></p>
+					<p class="MsoNormal">&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%">&nbsp;</td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>8.2</b></font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%">&nbsp;</td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>8.3</b></font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p><b><font size="4" face="Verdana">Section 9 - Advanced Scene Nodes and Controllers</font></b></p>
+		<p><font face="Verdana" size="2">This section provides more advanced examples on using 
+				the Scene Node/Controller Framework.</font></p>
+		<p>&nbsp;</p>
+		<table border="1" cellpadding="5" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#ffffff"
+			width="100%" id="AutoNumber5">
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="9.1.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>9.1</b></font></p>
+					<p class="MsoNormal"><font face="Verdana" size="2">This tutorial creates a look-at 
+							constraint controller that will cause a Scene Node to track its target.&nbsp; 
+							The controller is attached to the camera and targeted towards a walking skin 
+							mesh.&nbsp; You can use the cursor keys to move the skin mesh.</font></p>
+					<p class="MsoNormal">&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="9.2.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>9.2</b></font></p>
+					<p class="MsoNormal"><font face="Verdana" size="2">This tutorial creates an update 
+							controller that is meant to control a camera similar to First-Person-Shooter 
+							games.&nbsp; This controller is attached to the camera in the scene and you can 
+							use the mouse and W, A, S, D keys to walk, strafe and look around.&nbsp; A 
+							floor model is loaded in to give a sense of movement to the scene.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%"><font face="Verdana"> <img border="0" src="9.3.jpg" width="200" height="150"></font></td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>9.3</b></font></p>
+					<p class="MsoNormal"><font face="Verdana" size="2">This tutorial adds to the previous 
+							tutorial by creating a controller that will “attach” a model to the camera as 
+							the camera is moved around the first-person-shooter controller created 
+							earlier.&nbsp; A gun model is “attached” to the camera.&nbsp; Controls are 
+							similar to 9.2.</font></p>
+					<p>&nbsp;</p>
+				</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p><b><font size="4" face="Verdana">Section 10 - Miscellaneous</font></b></p>
+		<p><font face="Verdana" size="2">The section showcases other bits of functionality in 
+				X-VP that don't necessarily relate to the previous sections.</font></p>
+		<p>&nbsp;</p>
+		<table border="1" cellpadding="5" cellspacing="0" style="BORDER-COLLAPSE: collapse" bordercolor="#ffffff"
+			width="100%" id="AutoNumber6">
+			<tr>
+				<td width="18%">&nbsp;</td>
+				<td width="82%">
+					<p class="MsoNormal"><font face="Verdana"><b>10.1</b></font></p>
+					<p class="MsoNormal">&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%">&nbsp;</td>
+				<td width="82%"><font face="Verdana"><b>10.2</b></font><p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%">&nbsp;</td>
+				<td width="82%"><font face="Verdana"><b>10.3</b></font><p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%">&nbsp;</td>
+				<td width="82%"><font face="Verdana"><b>10.4</b></font><p>&nbsp;</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="18%">&nbsp;</td>
+				<td width="82%"><font face="Verdana"><b>10.5</b></font><p>&nbsp;</p>
+				</td>
+			</tr>
+		</table>
+		<p>&nbsp;</p>
+	</body>
+</html>

@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="HLSL">
+      <UniqueIdentifier>{f989dd51-c0b2-4832-9320-5e3d4bcf18fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HLSL\Headers">
+      <UniqueIdentifier>{5d933401-79a6-43d2-a03e-5b5cdf1332e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HLSL\PostFX">
+      <UniqueIdentifier>{49961512-fd98-47e7-99ce-112c67da61df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HLSL\Templates">
+      <UniqueIdentifier>{e5875ee0-f20d-4dfe-84b4-4cbd0eabcdb3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\system\shaders\hlsl\BPLighting.hfx">
+      <Filter>HLSL\Headers</Filter>
+    </None>
+    <None Include="..\system\shaders\hlsl\Model-Blinn Phong.tfx">
+      <Filter>HLSL\Templates</Filter>
+    </None>
+    <None Include="..\system\shaders\hlsl\Model-No Light.tfx">
+      <Filter>HLSL\Templates</Filter>
+    </None>
+    <None Include="..\system\shaders\hlsl\Particle System-No Light.tfx">
+      <Filter>HLSL\Templates</Filter>
+    </None>
+    <None Include="..\system\shaders\hlsl\Utilities.hfx">
+      <Filter>HLSL\Headers</Filter>
+    </None>
+    <None Include="..\system\shaders\hlsl\XVPShader.hfx">
+      <Filter>HLSL\Headers</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\system\shaders\hlsl\AdaptLum.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Bloom.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\blue.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\BrightPass.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Copy.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\distortion.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\DOF.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\DownSample2x2.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\DownSample4x4.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\FinalLum.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Fullscreen Quad.fx">
+      <Filter>HLSL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\GaussianBlur5x5.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\green.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\HDRTonemap.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\InitialLum.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Material Color.fx">
+      <Filter>HLSL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Model-Distortion.tfx">
+      <Filter>HLSL\Templates</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\MotionBlur.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Particle System-Blinn Phong.tfx">
+      <Filter>HLSL\Templates</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Pink.fx">
+      <Filter>HLSL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\red.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Shadow Caster SSM.fx">
+      <Filter>HLSL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Sprite.fx">
+      <Filter>HLSL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\Vertex Color.fx">
+      <Filter>HLSL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\White.fx">
+      <Filter>HLSL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\system\shaders\hlsl\yellow.postfx">
+      <Filter>HLSL\PostFX</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

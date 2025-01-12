@@ -1,0 +1,469 @@
+ 
+ //-----------------------------------------------------------------------------
+//Shader Description
+//-----------------------------------------------------------------------------
+//!!| Blinn-Phong lighting model with various per-pixel features. 
+//@@| VS
+//@@| PS
+
+
+//-----------------------------------------------------------------------------
+//Shader Features
+//-----------------------------------------------------------------------------
+#ifdef DIFF_MAP
+//##| DIFF_MAP |Diffuse Mapping |Provides base color and transparency from a single RGBA texture.
+	#ifdef DIFF_MAP_SCALE
+		//##| DIFF_MAP_SCALE |Diffuse Map Scale |Allows the diffuse map contribution to be scaled. |DIFF_MAP
+	#endif
+	#ifdef DIFF_MAP_ANIM
+		//##| DIFF_MAP_ANIM |Diffuse Map Animation |Allows the diffuse map uvs to be animated. |DIFF_MAP
+	#endif
+#endif
+
+#ifdef SPEC_MAP
+//##| SPEC_MAP |Specular Mapping |Masks specular lighting to specific areas of geometry.
+	#ifdef SPEC_MAP_SCALE
+		//##| SPEC_MAP_SCALE |Specular Map Scale |Allows the specular map contribution to be scaled. |SPEC_MAP
+	#endif
+#endif
+
+#ifdef AO_MAP
+//##| AO_MAP |Ambient Occlusion Mapping |Masks ambient lighting to specific areas of geometry
+	#ifdef AO_MAP_SCALE
+		//##| AO_MAP_SCALE |Ambient Occlusion Map Scale |Allows the ambient occlusion map contribution to be scaled. |AO_MAP
+	#endif
+#endif
+
+#ifdef EMISS_MAP
+//##| EMISS_MAP |Emissive Mapping |Simulates a light emitting surface.	
+	#ifdef EMISS_MAP_SCALE
+		//##| EMISS_MAP_SCALE |Emissive Map Scale |Allows the emissive map contribution to be scaled. |EMISS_MAP
+	#endif
+	#ifdef EMISS_MAP_ANIM
+		//##| EMISS_MAP_ANIM |Emissive Map Animation |Allows the emissive map uvs to be animated. |EMISS_MAP
+	#endif
+#endif
+
+#ifdef ENV_MAP
+	//##| ENV_MAP |Static Environment Mapping |Simulates reflections from distant light sources via a cubemap.	
+	#ifdef ENV_MAP_SCALE
+		//##| ENV_MAP_SCALE |Static Environment Mapping Scale |Allows the static environment map contribution to be scaled. |ENV_MAP
+	#endif
+#endif
+
+#ifdef MOTION_BLUR
+//##| MOTION_BLUR |Motion Blur |Causes the pixels of the object to be blurred in the direction of motion.  The intensity of the blur is based on the screen space speed of the object.  
+#endif
+
+#ifdef SHADOW_MAP
+//##| SHADOW_MAP |Shadow Mapping |Allows geometry to recieve shadow map occlusions from other geometry. 
+#endif
+
+#ifdef LINEAR_FOG
+//##| LINEAR_FOG |Linear Fog |Geometry is fogged in a linear fashion as it moves further away from the camera. |!EXP_FOG |!EXP2_FOG 
+#endif
+
+#ifdef EXP_FOG
+//##| EXP_FOG |Exponential Fog |Geometry is fogged in an exponential fashion as it moves further away from the camera.  Fog density increases rapidly as geometry moves into the distance. |!LINEAR_FOG |!EXP2_FOG 
+#endif
+
+#ifdef EXP2_FOG
+//##| EXP2_FOG |Exponential Squared Fog |Geometry is fogged using an exponential squared function.  At near distances, fog density increases slowly.  At large distances, fog density increases rapidly. |!LINEAR_FOG |!EXP_FOG
+#endif
+
+#ifdef OBJECT_ALPHA	
+//##| OBJECT_ALPHA |Object Alpha |Controls transparency of the entire object with a single alpha value.  The value is modulated with other alpha componenents.  
+#endif
+
+#ifdef DEPTH_FEATHER
+//##| DEPTH_FEATHER |Depth Edge Feathering |Gives partices a softer edge when intersecting geometry.  Helps create a more volumetric look.
+#endif
+
+
+//-----------------------------------------------------------------------------
+//Shader Maps
+//-----------------------------------------------------------------------------
+#ifdef DIFF_MAP
+//$$| 2DTexture |RGBA |Diffuse Map |A base color detail texture.  
+Texture2D diffuseMap : register(#TEX_ENUM);           
+SamplerState diffuseMapSam : register(#SAM_ENUM);
+#endif
+
+#ifdef ENV_MAP
+//$$| CubeTexture |RGBA |Environment Map |A cubemap used to simulate reflections of distant light sources.
+TextureCube envMap : register(#TEX_ENUM);           
+SamplerState envMapSam : register(#SAM_ENUM);
+#endif
+
+#if (defined(SPEC_MAP) || defined(AO_MAP) || defined(EMISS_MAP))
+#define MASK_MAP 
+//$$| 2DTexture |RGBA |Masks |A grayscale texture used to mask/scale various values of the lighting equation.  The red channel is the spec map used to control specular and environment map contributions, the green channel is the ambient occlusion map, and the alpha channel is the emmisive map. 
+Texture2D maskMap : register(#TEX_ENUM);           
+SamplerState maskMapSam : register(#SAM_ENUM);
+#endif
+
+Texture2D depthBuffer : register(t11);
+SamplerState depthBufferSam : register(s11);
+
+#ifdef SHADOW_MAP
+Texture2D shadowMap : register(t12);           
+SamplerState shadowMapSam : register(s12);
+Texture2D shadowMap2 : register(t13);           
+SamplerState shadowMapSam2 : register(s13);
+Texture2D shadowMap3 : register(t14);           
+SamplerState shadowMapSam3 : register(s14);
+Texture2D shadowMap4 : register(t15);           
+SamplerState shadowMapSam4 : register(s15);
+#endif
+
+
+//-----------------------------------------------------------------------------
+//Shader Parameters
+//-----------------------------------------------------------------------------
+//$$| float |Spec Power |[0.00001#500.0#.01] |(20.0) |Determines specular highlight size
+//$$| float |AO Map Scale |[0.0#10.0#.01] |(1.0) |Scalar multiplied with ambient occlusion map |AO_MAP_SCALE
+//$$| float |Env Map Scale |[0.0#10.0#.01] |(1.0) |Scalar multiplied with environment map |ENV_MAP_SCALE
+//$$| float |Spec Map Scale |[0.0#10.0#.01] |(1.0) |Scalar multiplied with specular map |SPEC_MAP_SCALE
+//$$| float |Diff Map Scale |[0.0#10.0#.01] |(1.0) |Scalar multiplied with diffuse map |DIFF_MAP_SCALE
+//$$| float |Emiss Map Scale |[0.0#10.0#.01] |(0.0) |Scalar multiplied with emissive map |EMISS_MAP_SCALE
+//$$| float |Diff Map U Speed |[-2.0#2.0#.001] |(0.0) |Diffuse map animation speed for the U coordinate expressed in uv units per second |DIFF_MAP_ANIM
+//$$| float |Diff Map V Speed |[-2.0#2.0#.001] |(0.0) |Diffuse map animation speed for the V coordinate expressed in uv units per second |DIFF_MAP_ANIM
+//$$| float |Emiss Map U Speed |[-2.0#2.0#.001] |(0.0) |Emissive map animation speed for the U coordinate expressed in uv units per second |EMISS_MAP_ANIM
+//$$| float |Emiss Map V Speed |[-2.0#2.0#.001] |(0.0) |Emissive map animation speed for the V coordinate expressed in uv units per second |EMISS_MAP_ANIM
+//$$| float |Object Alpha |[0.0#1.0#.001] |(1.0) |Alpha value for the entire object.  It will be modulated with other alpha components |OBJECT_ALPHA
+//$$| float |Softness |[0.00001#10.0#.001] |(1.0) |Controls the edge softness of the particles.  Requires alpha blending to be enabled
+
+
+
+#include "XVPShader.hfx"
+#include "BPLighting.hfx"
+#include "Utilities.hfx"
+
+
+
+//-----------------------------------------------------------------------------
+//Vertex Shader
+//-----------------------------------------------------------------------------
+struct VS_INPUT
+{
+    float4 v4Position		: POSITION;
+    float4 v4VertColor		: COLOR;
+    float3 v3VertNormal		: NORMAL;
+	float2 v2UV				: TEXCOORD0;
+	float2 v2UV2			: TEXCOORD1;
+	float2 v2UV3			: TEXCOORD2;
+};
+
+struct VS_OUTPUT
+{
+    float4 v4Position		: SV_Position;
+	float4 v4VertColor		: COLOR;
+	float3 v3VertNormal		: NORMAL;
+    float2 v2UV				: TEXCOORD0;
+	float3 v3VertPos		: TEXCOORD1;
+	float3 v3ObjToEyeDir	: TEXCOORD2;
+	float4 v4Pos			: TEXCOORD3;
+#ifdef MOTION_BLUR
+	float4 v4LastPosition	: TEXCOORD4;
+#endif
+#ifdef SHADOW_MAP
+	float4 v4ShadowPos		: TEXCOORD5;
+	float4 v4ShadowPos2		: TEXCOORD6;
+	float4 v4ShadowPos3		: TEXCOORD7;
+	float4 v4ShadowPos4		: TEXCOORD8;
+#endif
+#if (defined(LINEAR_FOG) || defined(EXP_FOG) || defined(EXP2_FOG))
+	float4 v4Params			: TEXCOORD9;	//x = fog factor
+#endif
+	float4 v4ClipPos		: TEXCOORD10;
+};
+
+
+cbuffer VSConstants : register(USER_SLOT0)
+{
+	float4 preRotatedQuad[4]				: packoffset(c0);
+	float4x4 prevVPMatrix					: packoffset(c4);
+	float4x4 wvpMatrix						: packoffset(c8);
+	float4x4 prevWVPMatrix					: packoffset(c12);
+	float4x4 worldMatrix					: packoffset(c16);
+	float4x4 wvMatrix						: packoffset(c20);
+	float3 v3CamPosWorldSpace				: packoffset(c24);
+	float4x4 occMatrices[MAX_NUM_LIGHTS]	: packoffset(c25);
+};
+
+
+VS_OUTPUT mainVS(VS_INPUT IN)				
+{
+	VS_OUTPUT OUT;
+	
+	OUT.v4Position = mul(IN.v4Position,wvpMatrix);
+	
+	//Build-up a float4 position from a float3 position and then transform it.
+    float4 vCenter = float4( IN.v4Position.x, IN.v4Position.y, IN.v4Position.z, 1.0f );
+
+	//Now push the center out to form one of the 4 corners
+	vCenter = vCenter + (preRotatedQuad[IN.v2UV2.x] * IN.v2UV2.y);
+
+    OUT.v4Position = mul(vCenter,viewProjMatrix);
+	OUT.v4Pos = mul(vCenter,viewProjMatrix);
+	OUT.v4ClipPos = OUT.v4Position;
+	OUT.v4ClipPos.xy /= OUT.v4ClipPos.w;
+	OUT.v3VertPos = vCenter;
+	OUT.v4VertColor = IN.v4VertColor;
+	OUT.v3VertNormal = float3(-invViewMatrix[2][0],-invViewMatrix[2][1],-invViewMatrix[2][2]);
+	OUT.v2UV = rotateUVs(IN.v2UV,float2(.5f,.5f),IN.v2UV3.x * v4FogColor.w);
+	OUT.v3ObjToEyeDir = normalize(v3CamPosWorldSpace - vCenter.xyz);
+
+#ifdef MOTION_BLUR
+	float4 prevVCenter = float4( IN.v3VertNormal.x, IN.v3VertNormal.y, IN.v3VertNormal.z, 1.0f ); 
+	prevVCenter = prevVCenter + (preRotatedQuad[IN.v2UV2.x] * IN.v2UV2.y);
+	OUT.v4LastPosition = mul(prevVCenter,prevVPMatrix);
+#endif
+	
+#ifdef SHADOW_MAP
+	OUT.v4ShadowPos = mul(vCenter,worldMatrix);
+	OUT.v4ShadowPos2 = OUT.v4ShadowPos;
+	OUT.v4ShadowPos3 = OUT.v4ShadowPos;
+	OUT.v4ShadowPos4 = OUT.v4ShadowPos;
+	OUT.v4ShadowPos = mul(OUT.v4ShadowPos,occMatrices[0]);
+	OUT.v4ShadowPos2 = mul(OUT.v4ShadowPos2,occMatrices[1]);	
+	OUT.v4ShadowPos3 = mul(OUT.v4ShadowPos3,occMatrices[2]);
+	OUT.v4ShadowPos4 = mul(OUT.v4ShadowPos4,occMatrices[3]);
+#endif
+
+#if defined(LINEAR_FOG)
+	float3 v4VertPosViewSpace = mul(v4FinalModelPos,wvMatrix); 
+	float fogRange = v4FogParams.y - v4FogParams.x;
+	float vertDist = v4FogParams.y - v4VertPosViewSpace.z;
+	OUT.v4Params.x = 1.0f - clamp((vertDist/fogRange),0.0f,1.0f);
+#elif defined(EXP_FOG)
+	float3 v4VertPosViewSpace = mul(v4FinalModelPos,wvMatrix); 
+	float dist = v4VertPosViewSpace.z/(max(v4FogParams.y,0.00001f)*4);
+	OUT.v4Params.x = 1.0f - exp(-dist*v4FogParams.z);
+#elif defined(EXP2_FOG)
+	float3 v4VertPosViewSpace = mul(v4FinalModelPos,wvMatrix); 
+	float dist = v4VertPosViewSpace.z/(max(v4FogParams.y,0.00001f)*4);
+	OUT.v4Params.x = 1.0f - exp2(-dist*v4FogParams.z);
+#endif
+
+	return OUT;
+}
+ 
+
+
+//-----------------------------------------------------------------------------
+//Pixel Shader
+//-----------------------------------------------------------------------------
+struct PS_INPUT
+{
+	float4 v4Position		: SV_Position;
+	float4 v4VertColor		: COLOR;
+	float3 v3VertNormal		: NORMAL;
+    float2 v2UV				: TEXCOORD0;
+	float3 v3VertPos		: TEXCOORD1;
+	float3 v3ObjToEyeDir	: TEXCOORD2;
+	float4 v4Pos			: TEXCOORD3;
+#ifdef MOTION_BLUR
+	float4 v4LastPosition	: TEXCOORD4;
+#endif
+#ifdef SHADOW_MAP
+	float4 v4ShadowPos		: TEXCOORD5;
+	float4 v4ShadowPos2		: TEXCOORD6;
+	float4 v4ShadowPos3		: TEXCOORD7;
+	float4 v4ShadowPos4		: TEXCOORD8;
+#endif
+#if (defined(LINEAR_FOG) || defined(EXP_FOG) || defined(EXP2_FOG))
+	float4 v4Params			: TEXCOORD9;	//x = fog factor
+#endif
+	float4 v4ClipPos		: TEXCOORD10;
+};
+
+struct PS_OUTPUT
+{
+	float4 v4Color			: SV_Target0;
+#ifdef MOTION_BLUR
+	float4 v4Velocity		: SV_Target1;
+#endif
+};
+
+
+cbuffer PSContants : register(USER_SLOT1)
+{
+	int4 lightEnabled						: packoffset(c0); 
+	int4 occEnabled							: packoffset(c1); 
+	int4 lightTypes							: packoffset(c2);
+	float4 v4LightDir[MAX_NUM_LIGHTS]		: packoffset(c3);		
+	float4 v4LightPos[MAX_NUM_LIGHTS]		: packoffset(c7);
+	float4 v4LightDiffuse[MAX_NUM_LIGHTS]	: packoffset(c11);	
+	float4 v4LightSpecular[MAX_NUM_LIGHTS]	: packoffset(c15);	
+	float4 v4LightParams[MAX_NUM_LIGHTS]	: packoffset(c19);	//x = fInvLightCutoff,y = fHotSpotDist,z = fCosHalfAngleCutoff,w = fCosHalfAngleDropoff
+	float4 v4ScaleParams					: packoffset(c23);	//x = spec power,y = ao scale,z = env scale,w = spec scale
+	float4 v4ScaleParams2					: packoffset(c24);	//x = diffuse scale,y = emissive scale,z = dnorm tile factor,w = object alpha
+	float4 v4AnimParams						: packoffset(c25);	//x = diff map u speed,y = diff map v speed,z = emiss map u speed,w = emiss map v speed
+	float4 v4MiscParams						: packoffset(c26);	//x = softness
+};
+
+
+PS_OUTPUT mainPS(PS_INPUT IN) 			
+{
+	PS_OUTPUT OUT;
+
+	float4 v4Color = float4(1,1,1,1);
+	
+	//Normalize our interpolated normals, etc..
+	float3 v3Normal = normalize(IN.v3VertNormal);
+	IN.v3ObjToEyeDir = normalize(IN.v3ObjToEyeDir);
+	
+#ifdef MASK_MAP
+	//Get values for spec mask, ao map, dnorm mask and emiss map
+	float4 v4Masks = maskMap.Sample(maskMapSam,IN.v2UV);
+#endif
+
+	BPResults bpResults = calcBPLighting(IN.v3VertPos,
+									v3Normal,
+									IN.v3ObjToEyeDir,
+									lightEnabled,
+									lightTypes,
+									v4LightDir,	
+									v4LightPos,	
+									v4LightDiffuse,
+									v4LightSpecular,		
+									v4LightParams,
+									v4ScaleParams.x);
+
+float3 v3Diffuse = bpResults.v3Diffuse;
+float3 v3Specular = bpResults.v3Specular;
+
+					
+#ifdef SHADOW_MAP
+	float shadowTerm = 1;
+	float4 v4Shadow,v4Shadow2,v4Shadow3,v4Shadow4;
+	if (occEnabled.x)
+	{
+		v4Shadow = shadowMap.Sample(shadowMapSam,float2(IN.v4ShadowPos.x/IN.v4ShadowPos.w,IN.v4ShadowPos.y/IN.v4ShadowPos.w));
+		if (v4Shadow.r < clamp(IN.v4ShadowPos.z/IN.v4ShadowPos.w + -.00002,0,1))
+			shadowTerm = 0;
+	}
+	if (occEnabled.y)
+	{
+		v4Shadow2 = shadowMap2.Sample(shadowMapSam2,float2(IN.v4ShadowPos2.x/IN.v4ShadowPos2.w,IN.v4ShadowPos2.y/IN.v4ShadowPos2.w));
+		if (v4Shadow2.r < clamp(IN.v4ShadowPos2.z/IN.v4ShadowPos2.w + -.00002,0,1))
+			shadowTerm = 0;
+	}
+	if (occEnabled.z)
+	{
+		v4Shadow3 = shadowMap3.Sample(shadowMapSam3,float2(IN.v4ShadowPos3.x/IN.v4ShadowPos3.w,IN.v4ShadowPos3.y/IN.v4ShadowPos3.w));
+		if (v4Shadow3.r < clamp(IN.v4ShadowPos3.z/IN.v4ShadowPos3.w + -.00002,0,1))
+			shadowTerm = 0;
+	}
+	if (occEnabled.w)
+	{	
+		v4Shadow4 = shadowMap4.Sample(shadowMapSam4,float2(IN.v4ShadowPos4.x/IN.v4ShadowPos4.w,IN.v4ShadowPos4.y/IN.v4ShadowPos4.w));
+		if (v4Shadow4.r < clamp(IN.v4ShadowPos4.z/IN.v4ShadowPos4.w + -.00002,0,1))
+			shadowTerm = 0;
+	}
+	
+	v3Diffuse *= shadowTerm;
+#endif
+	
+#ifdef SHADOW_MAP
+	v3Specular *= shadowTerm;
+#endif
+
+#ifdef ENV_MAP
+	float3 v3Reflect = (reflect(-IN.v3ObjToEyeDir,v3Normal));
+	float4 v4Env = envMap.Sample(envMapSam,v3Reflect);
+	#ifdef ENV_MAP_SCALE
+		v4Env *= v4ScaleParams.z;
+	#endif
+	v3Specular += v4Env.xyz;
+#endif
+
+#ifdef SPEC_MAP
+	float specMask = v4Masks.r; 
+	#ifdef SPEC_MAP_SCALE
+		specMask *= v4ScaleParams.w;
+	#endif
+	v3Specular *= specMask;
+#endif
+
+	float3 v3Ambient = v4GlobalAmbient.rgb;
+	
+#ifdef AO_MAP
+	float aoMask = v4Masks.g;
+	#ifdef AO_MAP_SCALE
+		aoMask *= v4ScaleParams.y;
+	#endif
+	v3Ambient *= aoMask;
+#endif
+
+	v4Color.rgb = v3Diffuse + v3Specular + v3Ambient;
+
+#ifdef DIFF_MAP
+	float2 diffUV = IN.v2UV;
+	#ifdef DIFF_MAP_ANIM
+		diffUV.x += v4AnimParams.x * v4FogColor.w;
+		diffUV.y += v4AnimParams.y * v4FogColor.w;
+	#endif
+	OUT.v4Color = diffuseMap.Sample(diffuseMapSam,diffUV);
+	#ifdef DIFF_MAP_SCALE
+		OUT.v4Color *= v4ScaleParams2.x;
+	#endif
+	OUT.v4Color *= v4Color;
+#else
+	OUT.v4Color = v4Color;
+#endif
+
+#ifdef EMISS_MAP
+	float emissMask = v4Masks.a;
+	#ifdef EMISS_MAP_ANIM
+		float2 emissUV = IN.v2UV;
+		emissUV.x += v4AnimParams.z * v4FogColor.w;
+		emissUV.y += v4AnimParams.w * v4FogColor.w;
+		emissMask = maskMap.Sample(maskMapSam,emissUV).a;
+	#endif
+	#ifdef EMISS_MAP_SCALE
+		emissMask *= v4ScaleParams2.y;
+	#endif
+	OUT.v4Color.rgb *=  emissMask + 1;
+#endif
+
+#if (defined(LINEAR_FOG) || defined(EXP_FOG) || defined(EXP2_FOG))
+	OUT.v4Color = lerp(OUT.v4Color,float4(1,0,0,1),IN.v4Params.x);
+#endif
+
+#ifdef MOTION_BLUR
+	OUT.v4Velocity = float4(computeVelocities(IN.v4Pos,IN.v4LastPosition),1.0f,1.0f);
+#endif
+
+#ifdef DEPTH_FEATHER
+	//Finally perform depth feathering. Convert clip position to viewport UVS
+	//and sample depth buffer. 
+	IN.v4ClipPos.y = -IN.v4ClipPos.y;
+	float2 texCoords = (IN.v4ClipPos.xy * .5f) + .5f;	
+	texCoords.x = (texCoords.x * viewportParams.x) + viewportParams.z;
+	texCoords.y = (texCoords.y * viewportParams.y) + viewportParams.w;
+
+	float depth = depthBuffer.Sample(depthBufferSam,texCoords).r;
+	float particleDepth = IN.v4Position.z;
+
+	float4 depthViewSample = mul( float4( IN.v4ClipPos.xy, depth, 1 ), invProjMatrix );
+    float4 depthViewParticle = mul( float4( IN.v4ClipPos.xy, particleDepth, 1 ), invProjMatrix );
+
+	float depthDiff = depthViewSample.z/depthViewSample.w - depthViewParticle.z/depthViewParticle.w;
+        if( depthDiff < 0 )
+            discard;
+
+	float depthFade = saturate( depthDiff / v4MiscParams.x );
+
+	OUT.v4Color.a *= depthFade;
+#endif
+
+#ifdef OBJECT_ALPHA
+	OUT.v4Color.a *= v4ScaleParams2.w;
+#endif
+
+	OUT.v4Color *= IN.v4VertColor;
+	
+	return OUT;
+}

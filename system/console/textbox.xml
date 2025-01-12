@@ -1,0 +1,25 @@
+<!-- This is the XUIVerticalScrollbar XML format.  The following attributes are available.  
+
+[Attributes]
+
+BackScrollButtonPropertyFile - the property file that describes the back scroll button
+ForwardScrollButtonPropertyFile - the property file that describes the forward scroll button
+SliderPropertyFile - the property file that describes the slider used for scrolling
+-->
+
+
+<textbox MaxChars = 10000
+	     LineHeightBias = 0
+		 CharPadding = 1
+		 Justification = 1
+		 ShowCursor = 1
+		 CursorBlinkRate = .5
+		 CharSetFile = "Arial-14.png"
+		 HighlightCharSetFile = "Arial-14.png"
+		 HighlightTextureFile = "redBG.png"
+		 CharSetDataFile = "Arial-14.ini"
+		 BGSpriteTemplateFile = "textBoxBGSprite.xml"
+		 TextBoxPadding = 3
+		 Editable = 1
+		 >
+</textbox>

@@ -1,0 +1,43 @@
+
+//Main include for XVP shaders
+
+#define MAX_NUM_LIGHTS	4
+
+
+#define SCENE_SLOT		b0
+#define USER_SLOT0		b1
+#define USER_SLOT1		b2
+#define USER_SLOT2		b3
+#define USER_SLOT3		b4
+#define USER_SLOT4		b5
+#define USER_SLOT5		b6
+#define USER_SLOT6		b7
+#define USER_SLOT7		b8
+#define USER_SLOT8		b9
+#define USER_SLOT9		b10
+#define USER_SLOT10		b11
+#define USER_SLOT11		b12
+#define USER_SLOT12		b13
+#define USER_SLOT13		b14
+#define USER_SLOT14		b15
+
+
+#define MAX_SAMPLES	16
+
+cbuffer SceneConstants : register(SCENE_SLOT)
+{
+    float4x4 viewMatrix			: packoffset(c0);
+	float4x4 invViewMatrix		: packoffset(c4);
+    float4x4 projMatrix			: packoffset(c8);
+	float4x4 invProjMatrix		: packoffset(c12);
+    float4x4 viewProjMatrix		: packoffset(c16);
+    float4x4 invViewProjMatrix	: packoffset(c20);
+	float4 viewportParams		: packoffset(c24);  //width, height, xoffset, yoffset..all normalized	
+	float4 v4FogParams			: packoffset(c25);	//x = fog start,y = fog end,z = fog density, w = frame dt
+	float4 v4FogColor			: packoffset(c26);	//xyz = rgb color, w = total elapsed time
+	float4 v4GlobalAmbient		: packoffset(c27);	
+};
+
+
+
+

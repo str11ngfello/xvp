@@ -1,0 +1,43 @@
+
+
+
+//*****************************************************************************
+//*****************************************************************************
+struct PS_INPUT
+{
+    float4 position         : SV_Position;
+    float2 texCoord0	    : TEXCOORD0;
+    float2 texCoord1	    : TEXCOORD1;
+    float2 texCoord2	    : TEXCOORD2;
+};
+
+
+
+struct PS_OUTPUT
+{
+    float4 RGBColor : SV_TARGET;  
+};
+
+Texture2D diffuseMap : register(t0);
+SamplerState MeshTextureSampler : register(s0);
+Texture2D normalMap : register(t1);
+SamplerState NormalTextureSampler : register(s1);
+
+PS_OUTPUT mainPS( PS_INPUT In ) 
+{ 
+    PS_OUTPUT Output;
+   
+   float3 v3PixelNormal = normalMap.Sample(NormalTextureSampler,In.texCoord2);
+	v3PixelNormal = (2 * v3PixelNormal) - 1;
+	
+	v3PixelNormal *= .05;
+    
+    float4 r0 = diffuseMap.Sample(MeshTextureSampler,float2(v3PixelNormal.x+In.texCoord0.x,v3PixelNormal.y+In.texCoord0.y));//In.texCoord0);
+	
+	//Output.RGBColor = lerp(r0,r1,.5f);
+	Output.RGBColor = r0;
+    return Output;
+}
+
+
+
