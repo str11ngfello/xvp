@@ -1,8 +1,11 @@
-# DEPRECATED
+# XVP 
+ 
+> [!CAUTION]
+The XVP SDK is no longer maintained or supported.
 
-This repository is deprecated. The XVP SDK is no longer maintained or supported. 
+XVP was a passion project that I worked on for many years (2000-2007) in my spare time. Back then, Unity and Unreal weren't options. People built their own in-house game engines, typically in C++, and it required years of development to build one.
 
-I'm publishing it 20 years later, primarily, to document it as a passiont project, show C++ experience to potential employers, that sort of thing. It was a **huge** project that I worked on for many years (2000-2007) in my spare time. Back then, Unity and Unreal weren't options. People built their own in-house game engines, typically in C++, and it required years of development to build one.
+I'm publishing XVP 20 years later, primarily, to document it as a passion project, show C++ experience to potential employers, that sort of thing. It was a **huge** project.
 
 Eventually Unity, Unreal, etc would democratize game development and make it accessible and affordable.
 
@@ -11,6 +14,7 @@ Eventually Unity, Unreal, etc would democratize game development and make it acc
 It abstracted away the complexity of the underlying hardware and provided everything you need to build a game, from the ground up. 
 - 3D Rendering
 - 2D Rendering
+- Bones/Skinning
 - Audio
 - Networking
 - Input
@@ -19,12 +23,13 @@ It abstracted away the complexity of the underlying hardware and provided everyt
 - Animation
 - Scripting (Lua)
 - Vector, Matrix, Quaternion math libraries
+- 3D Max, Maya, Collada exporters
 
 Eventually I'd end up building the X-VP Designer on top of the XVP SDK. It was a visual editor that allowed you to create games using the XVP SDK (think Unity). Many other tools followed, like the XVP Wad tool (Asset bundling), the XVP Managed wrapper (C# wrapper), the XVP ShaderGen compiler (Shader permutations), and the XVP LuaGen compiler (Lua scripting).
 
-You can probably get a good idea of what XVP was by reading this old PDF.
-
-![XVP Introduction](docs/XVPIntro.pdf)
+> [!NOTE]
+You can probably get a good high level overview of XVP by reading the intro PDF in the docs folder. 
+ ![XVP Introduction](docs/XVPIntro.pdf)
 
 
 # Extensible Visualization Platform (X-VP) SDK
@@ -39,6 +44,7 @@ There are several large apps that are built on top of the XVP SDK.
 - **XVP Managed**: A managed C# wrapper around the XVP SDK. This was used to expose the C++ SDK to C# applications like the X-VP Designer (editor).
 - **XVP ShaderGen** : A compiler for shader permutations for the SDK to create efficient shaders for the GPU.
 - **XVP LuaGen** : A compiler for Lua scripts for the SDK. This was used to create the X-VP LuaGlue for game designers to create custom scripts for their games.
+- **XVP Exporters** : A set of tools for exporting models and animations from 3D Studio Max, Maya, etc into the XVP scene format.
   
 ## Features
 
