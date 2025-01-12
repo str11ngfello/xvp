@@ -8,7 +8,7 @@ XVP was a passion project that I worked on for many years (2000-2007) in my spar
 
 I'm publishing XVP 20 years later, primarily, to document it as a passion project, show C++ experience to potential employers, that sort of thing. It was a **huge** project.
 
-Eventually Unity, Unreal, etc would democratize game development and make it accessible and affordable.
+Eventually Unity, Unreal, etc would democratize game development and make custom engine development largely obsolete.
 
 
 ## What did XVP do?
