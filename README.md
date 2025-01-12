@@ -29,7 +29,8 @@ Eventually I'd end up building the X-VP Designer on top of the XVP SDK. It was a
 
 > [!NOTE]
 You can probably get a good high level overview of XVP by reading the intro PDF in the docs folder. 
- ![XVP Introduction](docs/XVPIntro.pdf)
+ 
+> ![XVP Introduction](docs/XVPIntro.pdf)
 
 
 # Extensible Visualization Platform (X-VP) SDK
@@ -224,23 +225,3 @@ The `xvpsdk` directory is organized into several key folders. From math librarie
 - **`XVP.vcxproj`**: Visual Studio project file for building the SDK.
 - **`XVP.sln`**: Visual Studio solution file for managing the SDK's projects.
 
-## Getting Started
-
-To begin using the X-VP SDK, follow these steps:
-
-1. **Installation**: Install the SDK by following the instructions in the `ReleaseNotes-v.01.html`.
-2. **Build the SDK**: Open the `XVP.sln` solution file in Visual Studio and build the project.
-3. **Explore the Tutorials**: Start with the tutorials provided in the `docs` folder to understand the basic concepts and features of the SDK.
-4. **Develop Your Application**: Use the headers and source files in the `inc` and `src` directories to develop your visualization application.
-
-## Support
-
-For support, please contact [support@soularsouls.com](mailto:support@soularsouls.com).
-
-## License
-
-The X-VP SDK is licensed under the terms specified in the End User License Agreement (EULA) included in the `docs` directory. Please read and accept the terms before using the SDK.
-
----
-
-This README provides an overview of the X-VP SDK, its features, and how to get started. For more detailed information, refer to the documentation and tutorials included in the SDK. 
