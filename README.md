@@ -1,5 +1,6 @@
 # XVP 
- 
+
+![XVP Banner](xvpBanner.png)
 > [!CAUTION]
 The XVP SDK is no longer maintained or supported.
 
