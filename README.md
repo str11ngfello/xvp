@@ -1,3 +1,32 @@
+# DEPRECATED
+
+This repository is deprecated. The XVP SDK is no longer maintained or supported. 
+
+I'm publishing it 20 years later, primarily, to document it as a passiont project, show C++ experience to potential employers, that sort of thing. It was a **huge** project that I worked on for many years (2000-2007) in my spare time. Back then, Unity and Unreal weren't options. People built their own in-house game engines, typically in C++, and it required years of development to build one.
+
+Eventually Unity, Unreal, etc would democratize game development and make it accessible and affordable.
+
+
+## What did XVP do?
+It abstracted away the complexity of the underlying hardware and provided everything you need to build a game, from the ground up. 
+- 3D Rendering
+- 2D Rendering
+- Audio
+- Networking
+- Input
+- Physics
+- UI
+- Animation
+- Scripting (Lua)
+- Vector, Matrix, Quaternion math libraries
+
+Eventually I'd end up building the X-VP Designer on top of the XVP SDK. It was a visual editor that allowed you to create games using the XVP SDK (think Unity). Many other tools followed, like the XVP Wad tool (Asset bundling), the XVP Managed wrapper (C# wrapper), the XVP ShaderGen compiler (Shader permutations), and the XVP LuaGen compiler (Lua scripting).
+
+You can probably get a good idea of what XVP was by reading this old PDF.
+
+![XVP Introduction](docs/XVPIntro.pdf)
+
+
 # Extensible Visualization Platform (X-VP) SDK
 
 The Extensible Visualization Platform (X-VP) SDK is a comprehensive toolkit designed to facilitate the development of games and other visual applications.
@@ -13,16 +42,11 @@ There are several large apps that are built on top of the XVP SDK.
   
 ## Features
 
-- **Animation Support**: The SDK includes classes like `XAnimSprite` for handling sprite animations, allowing for detailed control over frame sequences, playback speed, and looping.
-- **Graphics and Rendering**: With support for various graphics components, the SDK enables the creation of visually rich applications.
-- **Audio Management**: Includes audio management capabilities, supporting formats like Ogg and WAV.
-- **Network Communication**: Provides networking components for TCP and UDP communication, facilitating multiplayer and networked applications.
-- **Input Handling**: Comprehensive input management for handling user interactions.
-- **Cross-Platform Support**: While primarily targeted at Windows, the SDK is designed with cross-platform capabilities in mind.
+This XVP Introduction PDF in the docs folderis the best overview of what XVP was, it's design goals, and how it was used.
 
 ## Folder Structure
 
-The `xvpsdk` directory is organized into several key folders. 
+The `xvpsdk` directory is organized into several key folders. From math libraries to core graphics, networking and input functionality. 
 
 - **`src`**: Contains the source code for the SDK. 
   - **`core`**: Core functionality of the SDK, including animation, graphics, and system utilities.
